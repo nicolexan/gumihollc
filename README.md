@@ -1,212 +1,224 @@
-# ScrewFast
+# Earnest Gumiho
 
-![ScrewFast landing page](https://github.com/mearashadowfax/ScrewFast/assets/125820963/cdf299bd-414a-4a2d-baf0-d188bb4709c7)
+The website for **Gumiho LLC** and its brand **Earnest Gumiho**: premium Korean ginseng powders from Geumsan, Korea. The site presents the products, links to them on Amazon, and shares ginseng recipes and articles.
 
-ScrewFast is an open-source website template built with [Astro](https://astro.build/), [Tailwind CSS](https://tailwindcss.com/), and [Preline UI](https://preline.co/). You get a landing page, blog, product pages, and a full documentation site in one repo, so you can launch a complete web presence by editing content and props instead of building pages from scratch. Unlike single-purpose landing or blog themes, it ships with SEO metadata, i18n, security headers, and CI already wired up.
+Live site: [gumihollc.com](https://gumihollc.com)
 
-Live demo: [screwfast.uk](https://screwfast.uk)
+Built with [Astro](https://astro.build/), [Tailwind CSS](https://tailwindcss.com/), and [Preline UI](https://preline.co/), starting from the open-source [ScrewFast](https://github.com/mearashadowfax/ScrewFast) template (see [Credits](#credits)).
 
-- **Four site types in one.** Landing page, blog, product catalog, and [Starlight](https://starlight.astro.build/) docs, all sharing one layout, navbar, and footer.
-- **Ready-made components.** Page sections (hero, features, pricing, testimonials, FAQ, mega menu) and UI pieces (cards, forms, modals, buttons, icons).
-- **Multilingual out of the box.** English and French marketing pages; docs in 7 languages (en, de, es, fa, fr, ja, zh-CN) with RTL support. Only need one language? Use the [`monolingual-site`](https://github.com/mearashadowfax/ScrewFast/tree/monolingual-site) branch.
-- **SEO handled.** Centralized title/description/Open Graph config, JSON-LD structured data, generated sitemap and `robots.txt`.
-- **Production-hardened.** Content Security Policy and other security headers via `vercel.json`, post-build HTML minification, and a CI pipeline that type-checks, builds, and smoke-tests every push.
-- **Current stack.** Astro 7, Tailwind CSS 4, Preline 5, TypeScript 6. Dependabot keeps it that way.
-- **AI-assistant friendly.** [`AI_GUIDE.md`](AI_GUIDE.md) tells Cursor, Copilot, and Claude where things live and which conventions to follow.
-- **MIT licensed.** 1.4k stars and 380+ forks on GitHub.
+**Pages**
 
-Pages are composed from sections with plain props:
-
-```astro
----
-import MainLayout from '@/layouts/MainLayout.astro';
-import HeroSection from '@components/sections/landing/HeroSection.astro';
----
-
-<MainLayout title="Acme Tools">
-  <HeroSection
-    title="Equip Your Projects with Acme"
-    subTitle="Top-quality hardware tools for every project need."
-    primaryBtn="Start Exploring"
-    primaryBtnURL="/products"
-  />
-</MainLayout>
-<!-- Renders a full page with navbar, hero, and footer -->
-```
+| Page      | URL         | What's on it                                                                                    |
+| --------- | ----------- | ----------------------------------------------------------------------------------------------- |
+| Home      | `/`         | Hero, ginseng benefits, "From Geumsan to your table" tabs, customer reviews, FAQ, Amazon banner |
+| Products  | `/products` | Ginseng Powder and Lululala Ginseng Powder, each with its own page and Amazon link              |
+| Our Story | `/about`    | Company mission, Geumsan, manufacturing                                                         |
+| Recipes   | `/blog`     | Latte, iced latte, and slush recipes, plus articles about Korean ginseng                        |
+| FAQ       | `/faq`      | Common questions                                                                                |
+| Contact   | `/contact`  | Email, KakaoTalk, and Instagram (no contact form)                                               |
 
 ---
 
 ## Table of Contents
 
 - [Getting Started](#getting-started)
-- [Make It Yours](#make-it-yours)
-  - [Site name, SEO, and Open Graph](#site-name-seo-and-open-graph)
+- [Editing the Site](#editing-the-site)
+  - [Page text](#page-text)
+  - [Contact details and Amazon links](#contact-details-and-amazon-links)
+  - [Products](#products)
+  - [Recipes and articles](#recipes-and-articles)
+  - [FAQ and ginseng benefits](#faq-and-ginseng-benefits)
+  - [Customer reviews](#customer-reviews)
+  - [Images](#images)
   - [Navigation and footer](#navigation-and-footer)
-  - [Pages and sections](#pages-and-sections)
-  - [Blog, products, and insights](#blog-products-and-insights)
-  - [Documentation (Starlight)](#documentation-starlight)
-  - [Languages](#languages)
-  - [Icons](#icons)
-- [Deployment](#deployment)
+  - [Brand colors and logo](#brand-colors-and-logo)
+- [Korean Translation](#korean-translation)
+- [Building, Testing, and Deploying](#building-testing-and-deploying)
 - [Project Structure](#project-structure)
 - [Under the Hood](#under-the-hood)
-  - [Smooth scrolling (Lenis)](#smooth-scrolling-lenis)
-  - [Animations (GSAP)](#animations-gsap)
-  - [Hidden scrollbar](#hidden-scrollbar)
-  - [SEO and structured data](#seo-and-structured-data)
-  - [Forms](#forms)
-  - [robots.txt and sitemap](#robotstxt-and-sitemap)
-  - [Markdown, MDX, and image pasting](#markdown-mdx-and-image-pasting)
-  - [HTML minification](#html-minification)
-  - [Security headers](#security-headers)
-  - [Formatting](#formatting)
-- [Contributing](#contributing)
-- [License](#license)
+- [Credits](#credits)
 
 ---
 
 ## Getting Started
 
-You need **Node.js 22** and **pnpm 9 or newer** (the versions CI uses).
-
-**1. Create your repo.** Click **Use this template** at the top of the [GitHub page](https://github.com/mearashadowfax/ScrewFast), or clone directly:
-
-```bash
-git clone https://github.com/mearashadowfax/ScrewFast.git my-site
-cd my-site
-```
-
-**2. Install dependencies:**
+You need **Node.js 22** and **pnpm** (CI uses pnpm 9; newer versions also work).
 
 ```bash
 pnpm install
-```
-
-**3. Start the dev server:**
-
-```bash
 pnpm dev
 ```
 
-Open <http://localhost:4321>. Edits to any file reload the page.
+Open <http://localhost:4321>. The page reloads whenever you save a file.
 
-**4. Build for production:**
+> [!NOTE]
+> **pnpm 10 or newer** may stop the install with `Ignored build scripts: esbuild`. Create a `pnpm-workspace.yaml` in the project root with:
+>
+> ```yaml
+> allowBuilds:
+>   esbuild: false
+> ```
 
-```bash
-pnpm build
-```
-
-This runs `astro check` (type-checking), builds the site into `dist/`, and minifies the HTML. Preview the result with `pnpm preview`, or run `pnpm test:smoke` to serve `dist/` and verify the key routes respond.
-
-> [!TIP]
-> Only need one language? The [`monolingual-site`](https://github.com/mearashadowfax/ScrewFast/tree/monolingual-site) branch has the French pages and i18n plumbing removed.
+> [!WARNING]
+> **Windows + WSL:** keep the project inside the Linux file system (for example `~/gumihollc`), not in a Windows or OneDrive folder under `/mnt/c/`. `pnpm install` fails there with `ERR_PNPM_CMD_SHIM_CHMOD`, and OneDrive tries to sync `node_modules`.
 
 ---
 
-## Make It Yours
+## Editing the Site
 
-### Site name, SEO, and Open Graph
+Almost everything you'd want to change is text or data. You rarely need to touch components.
 
-Everything site-wide lives in [`src/data_files/constants.ts`](src/data_files/constants.ts):
+### Page text
 
-```ts
-export const SITE = {
-  title: 'ScrewFast',
-  tagline: 'Top-quality Hardware Tools',
-  description: '...',
-  url: 'https://screwfast.uk',
-  author: 'Emil Gulamov',
-};
+All page and navigation text lives in one file: [`src/copy/en.ts`](src/copy/en.ts). It's organized by page (`home`, `about`, `contact`, `faq`, `blogIndex`, `productsIndex`, …) plus shared pieces (`nav`, `footer`, `notFound`).
 
-export const OG = { image: ogImageSrc };
-```
+Headings that contain `<span class="text-pink-500 …">` highlight part of the heading in brand pink. Keep the tag if you want the highlight.
 
-Per-locale text (site description, Open Graph title/description) lives in the copy tables under [`src/copy/`](src/copy/). Change `SITE`, and every page's `<head>` picks it up. Also update `site` in [`astro.config.mjs`](astro.config.mjs) so the sitemap and `robots.txt` point at your domain.
+Site-wide SEO text (the default description and the social-sharing title) is in the `site` block at the top of the same file.
 
-### Navigation and footer
+### Contact details and Amazon links
 
-Link structure (ids, unlocalised paths, social URLs) lives once in [`src/data_files/navigation.ts`](src/data_files/navigation.ts); the label for each id lives in the `nav` block of each copy table, [`src/copy/en.ts`](src/copy/en.ts) and [`src/copy/fr.ts`](src/copy/fr.ts). The Navbar and Footer prefix paths for the current locale:
+[`src/data_files/constants.ts`](src/data_files/constants.ts):
 
-```ts
-// src/data_files/navigation.ts
-export const navLinks = [
-  { id: 'home', path: '/' },
-  { id: 'products', path: '/products' },
-  { id: 'blog', path: '/blog' },
-];
-export const footerSections = [
-  { id: 'company', links: [{ id: 'careers', path: '#', badge: 'hiring' }] },
-];
+- `SITE`: brand name, legal company name, and domain
+- `CONTACT`: email, KakaoTalk ID, Instagram handle and URL (used by the contact page and footer)
+- `SHOP.amazonUrl`: the Amazon link used by the home-page banner and the footer's "Buy on Amazon"
 
-// src/copy/en.ts
-nav: {
-  labels: { home: 'Home', products: 'Products', blog: 'Blog' },
-  footer: { sectionTitles: { company: 'Company' }, links: { careers: 'Careers' } },
-},
-```
+Each product's own Amazon button is set in its product file (`btnURL`, see below).
 
-Two navbars are included in `src/components/sections/navbar&footer/`: `Navbar.astro` (standard) and `NavbarMegaMenu.astro` (mega menu on the Services link, links in `src/data_files/mega_link.ts`). Swap them in [`src/layouts/MainLayout.astro`](src/layouts/MainLayout.astro).
+> [!TIP]
+> Use the short form of Amazon links, `https://www.amazon.com/dp/<ASIN>`. Share links copied from Amazon include tracking parameters that can stop working.
 
-![ScrewFast mega menu](https://github.com/user-attachments/assets/690482af-f1a4-4ebf-be58-eca0b5862973)
+### Products
 
-### Pages and sections
+One Markdown file per product in [`src/content/products/en/`](src/content/products/en/). The file name becomes the URL (`ginseng-powder.md` → `/products/ginseng-powder`).
 
-Each route has one view in `src/views/` (for example [`HomeView.astro`](src/views/HomeView.astro)) that composes sections from `src/components/sections/` and passes content as props. The files in `src/pages/` and `src/pages/fr/` are one-line shells that render the view for their locale, so a page is edited once for every language.
+Each file is front matter only. The fields:
 
-Views read their text from the copy tables in [`src/copy/`](src/copy/) (`home`, `services`, `contact`, …); edit those to change what a page says. Reusable data such as FAQs, features, and pricing tiers lives as JSON in `src/data_files/` and is exposed through the same tables as `data`.
+| Field                                         | What it controls                                                                      |
+| --------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `title`, `description`                        | Product name and one-line subtitle                                                    |
+| `main.id`                                     | Sort order on the products page                                                       |
+| `main.content`                                | Intro sentence at the top of the product page                                         |
+| `main.imgCard`, `main.imgMain`, `main.imgAlt` | Product image (card and page) and its description                                     |
+| `tabs`                                        | Tab titles; include the third tab only if the product has `blueprints` photos         |
+| `longDescription`                             | Main description, plus the button (`btnTitle`, `btnURL`, the Amazon link)             |
+| `descriptionList`                             | The three highlights beside the description                                           |
+| `specificationsLeft`, `tableData`             | The **Details** tab                                                                   |
+| `blueprints`                                  | Two photos for the optional third tab (with `firstAlt`/`secondAlt`), or `{}` for none |
 
-### Blog, products, and insights
+To add a product, copy an existing file, rename it, and edit it. The schema is in [`src/content.config.ts`](src/content.config.ts); a missing or misspelled field fails the build.
 
-Content is Markdown/MDX in `src/content/{blog,products,insights}/{en,fr}/`. Schemas are defined in [`src/content.config.ts`](src/content.config.ts). A blog post looks like:
+### Recipes and articles
+
+- **Recipes:** [`src/content/blog/en/`](src/content/blog/en/), shown on `/blog` newest first by `pubDate`
+- **Articles** ("Learn About Korean Ginseng"): [`src/content/insights/en/`](src/content/insights/en/)
+
+Both are Markdown with front matter and a body. A recipe:
 
 ```md
 ---
-title: "Maximizing Efficiency with ScrewFast's Cutting-Edge Tools"
-description: 'Innovating Construction Efficiency with Precision Tools & Support'
-author: 'Jacob'
-authorImage: '@/images/blog/jacob.avif'
-pubDate: 2024-02-06
-cardImage: '@/images/blog/post-1.avif'
-readTime: 4
-tags: ['tools', 'construction', 'workflow']
+title: 'Hot Ginseng Latte'
+description: 'A warm, creamy 12oz latte made with Earnest Gumiho ginseng powder.'
+author: 'Earnest Gumiho'
+role: 'Recipe'
+authorImage: '@/images/gumiho/transparent gumihollc logo.png'
+authorImageAlt: 'Earnest Gumiho logo'
+pubDate: 2026-09-22
+cardImage: '@/images/gumiho/hot latte.jpg'
+cardImageAlt: 'A hot ginseng latte in a cup'
+readTime: 2
+tags: ['recipe', 'latte', 'hot']
 ---
 
-Post body here.
+## Ingredients
+
+- Gumiho's Ginseng Powder (10g)
+- ...
 ```
 
-Blog posts get social share buttons, a `localStorage` bookmark button, and a feedback widget (UI only, no back end). Insight pages get a table of contents with a scroll-progress indicator.
+Articles use `##` headings; they become the article's table of contents automatically.
 
-### Documentation (Starlight)
+### FAQ and ginseng benefits
 
-Docs live in `src/content/docs/` and are served by [Starlight](https://starlight.astro.build/) at `/welcome-to-docs/`. Sidebar, locales, and custom components are configured in the `starlight()` block of [`astro.config.mjs`](astro.config.mjs). Starlight brings search, dark mode, code highlighting, and responsive navigation.
+- **FAQ:** [`src/data_files/faqs.json`](src/data_files/faqs.json), shown on `/faq` and on the home page
+- **Benefits** (the six items under "Benefits of Korean Ginseng"): [`src/data_files/features.json`](src/data_files/features.json). `svg` is an icon name from [`icons.ts`](src/components/ui/icons/icons.ts).
 
-> [!IMPORTANT]
-> If the docs sidebar won't scroll, remove the Lenis `<script>` from `src/components/ui/starlight/Head.astro`.
+### Customer reviews
 
-### Languages
+Reviews live in `home.testimonials.quotes` in [`src/copy/en.ts`](src/copy/en.ts). The same list appears on the home page and the products page. Each review has `content`, `author`, and an optional `role` (for example "Verified Amazon Buyer"). Reviews don't show photos.
 
-Marketing pages are file-based: `src/pages/` for English, `src/pages/fr/` for French, each rendering a shared view from `src/views/`. A `LanguagePicker` component switches between them. Everything locale-related lives in [`src/utils/locale.ts`](src/utils/locale.ts) (the locale list, `resolveLocale()`, `localePath()`, `alternatePaths()`); a middleware resolves the locale once per request and exposes it as `Astro.locals.locale`, with the matching copy table as `Astro.locals.copy`. UI strings live in [`src/copy/en.ts`](src/copy/en.ts) and [`src/copy/fr.ts`](src/copy/fr.ts); the French table is typed against the English one, so a missing translation fails `astro check`. Docs locales are configured in Starlight; guides and the welcome page are translated, other docs sections fall back to English.
+### Images
 
-A static build can only have one `404.html` (English). A French 404 is also built at `/fr/404/`; the `rewrites` entry in [`vercel.json`](vercel.json) sends missing `/fr/…` paths to it (Vercel serves rewrites with a 200 status). On Netlify use a `_redirects` line instead: `/fr/* /fr/404/index.html 404`.
+Put images in [`src/images/gumiho/`](src/images/gumiho/). Astro resizes and converts them at build time, so full-size originals are fine.
 
-### Icons
+- **In Markdown:** reference them as `'@/images/gumiho/<file name>'`
+- **In a page:** import them in the view, for example [`src/views/HomeView.astro`](src/views/HomeView.astro)
 
-SVG icons are centralized in [`src/components/ui/icons/icons.ts`](src/components/ui/icons/icons.ts) (45 included). Render one with:
+The home-page hero crops the image to a wide frame. Use `imagePosition` on `<HeroSection>` to choose which part stays visible (for example `"50% 75%"` keeps the lower part).
 
-```astro
-<Icon name="tools" class="h-6 w-6 text-orange-400" />
-```
+Always write alt text that describes what's in the photo.
 
-Entries hold geometry only; size and colour come from the `class` you pass (every icon is coloured with `text-*` classes). `name` is typed, so a typo fails `astro check`. Add an entry to `icons.ts` to register a new icon.
+### Navigation and footer
+
+- **Links:** [`src/data_files/navigation.ts`](src/data_files/navigation.ts) holds the link structure (ids and paths).
+- **Labels:** the visible text is in the `nav` block of [`src/copy/en.ts`](src/copy/en.ts).
+
+### Brand colors and logo
+
+- **Colors:** the brand pink scale (`pink-50` … `pink-950`) is defined in the `@theme` block of [`src/assets/styles/global.css`](src/assets/styles/global.css). It's sampled from the logo. Change the values there and the whole site follows.
+- **Logo:** `src/images/gumiho/transparent gumihollc logo.png` is used in the navbar, the footer, the favicon, and the app icons.
+  - [`BrandLogo.astro`](src/components/BrandLogo.astro) pairs it with the "Earnest Gumiho" name as text, because the lettering inside the round logo is too small to read at navbar size.
 
 ---
 
-## Deployment
+## Korean Translation
 
-`pnpm build` produces a static site in `dist/` that any static host can serve.
+A full Korean translation exists but is **not published yet**. The files:
 
-- **Vercel:** [Deploy with Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmearashadowfax%2FScrewFast). The included [`vercel.json`](vercel.json) adds security headers and caching rules.
-- **Netlify:** [Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/mearashadowfax/ScrewFast).
+- [`src/copy/ko.ts`](src/copy/ko.ts): page text
+- [`src/data_files/ko/`](src/data_files/ko/): FAQ and benefits
+- `src/content/{blog,insights,products}/ko/`: recipes, articles, and products (same file names as English)
+- [`src/pages/_ko/`](src/pages/_ko/): the Korean routes. Astro ignores folders starting with `_`, so nothing is built.
+
+While Korean is off:
+
+- **The language picker is hidden.**
+- **Missing translations don't break the build.** Anything missing from `ko.ts` falls back to English, so you can add English text without translating it right away.
+- **Typos still fail the build.** A misspelled key in `ko.ts` is caught.
+
+**To publish Korean:**
+
+1. Add `'ko'` to `MARKETING_LOCALES` in [`src/utils/locale.ts`](src/utils/locale.ts).
+2. Rename `src/pages/_ko/` to `src/pages/ko/`.
+3. Uncomment `ko: 'ko'` in the sitemap `locales` in [`astro.config.mjs`](astro.config.mjs).
+4. Add `'/ko'` to `LOCALE_PREFIXES` in [`scripts/smoke.mjs`](scripts/smoke.mjs).
+5. Add this rewrite to [`vercel.json`](vercel.json) so missing Korean pages show the Korean 404:
+
+   ```json
+   "rewrites": [{ "source": "/ko/:path*", "destination": "/ko/404" }]
+   ```
+
+6. Compare `en.ts` with `ko.ts` and translate anything added since.
+7. Have a native speaker review the text, especially the health-related wording.
+
+Korean pages will live under `/ko` (for example `/ko/products`). The language picker links each page to its twin in the other language.
+
+---
+
+## Building, Testing, and Deploying
+
+| Command                                 | What it does                                                                                   |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `pnpm dev`                              | Local dev server at <http://localhost:4321>                                                    |
+| `pnpm build`                            | Type-checks everything (`astro check`), builds the site into `dist/`, and minifies the HTML    |
+| `pnpm preview`                          | Serves the built `dist/` locally                                                               |
+| `pnpm test:smoke`                       | Serves `dist/` and checks that every page loads and shows key content (run after `pnpm build`) |
+| `pnpm format:check` / `pnpm format:fix` | Checks or fixes code formatting with Prettier                                                  |
+
+**CI:** [`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs install, `format:check`, `build`, and `test:smoke` on every push and pull request. Run the same commands locally before pushing.
+
+**Deploying:** `pnpm build` produces a static site in `dist/` that any static host can serve. [`vercel.json`](vercel.json) adds security headers (including a Content Security Policy) and caching rules on Vercel. If you add third-party scripts, fonts, or image hosts, allow them in the CSP there.
 
 ---
 
@@ -215,115 +227,59 @@ Entries hold geometry only; size and colour come from the `class` you pass (ever
 ```
 src/
 ├── assets/
-│   ├── scripts/            # Lenis smooth scroll, demo form behaviour
-│   └── styles/             # global.css, lenis.css, Starlight overrides
+│   ├── scripts/            # Lenis smooth scrolling
+│   └── styles/             # global.css (brand colors), lenis.css
 ├── components/
+│   ├── BrandLogo.astro     # Logo + "Earnest Gumiho" wordmark
 │   ├── Meta.astro          # Renders the <head> from utils/metadata.ts
-│   ├── ThemeIcon.astro     # Light/dark toggle
-│   ├── sections/           # Page sections: landing, features, pricing, navbar&footer, ...
-│   └── ui/                 # Buttons, cards, forms, icons, banners, ...
+│   ├── sections/           # Page sections: hero, features, products, testimonials, FAQ, navbar & footer, ...
+│   └── ui/                 # Buttons, cards, banners, icons, ...
 ├── content/
-│   ├── blog/  products/  insights/   # en/ and fr/ subfolders
-│   └── docs/                          # Starlight docs + translated locales
-├── copy/                   # en.ts / fr.ts: every UI and page string, typed
-├── data_files/             # constants.ts (SITE/OG), navigation.ts, mega_link.ts, faqs/features/pricing JSON
-├── images/                 # Imported and optimized by Astro
-├── layouts/
-│   └── MainLayout.astro    # Navbar + slot + footer, Meta, Lenis, Preline
-├── middleware.ts           # Sets Astro.locals.locale / .copy per request
-├── pages/                  # File-based routes; fr/ mirrors them, each a one-line shell
-│   ├── index.astro  blog/  products/  insights/  contact.astro  services.astro
-│   ├── 404.astro           # also built at fr/404/
-│   └── robots.txt.ts  manifest.json.ts  favicon.ico.ts
-├── views/                  # One view per route; the locale is a prop
-├── utils/                  # locale.ts, content.ts, metadata.ts, helpers
-└── content.config.ts       # Content collection schemas
+│   ├── blog/               # Recipes (en/, ko/)
+│   ├── insights/           # Ginseng articles (en/, ko/)
+│   └── products/           # Products (en/, ko/)
+├── copy/                   # en.ts (all site text), ko.ts (Korean), index.ts
+├── data_files/             # constants.ts (site, contact, Amazon), navigation.ts, faqs/features JSON (+ ko/)
+├── images/gumiho/          # All site images
+├── layouts/MainLayout.astro
+├── middleware.ts           # Resolves the language for each request
+├── pages/                  # One file per route; _ko/ holds the unpublished Korean routes
+├── utils/                  # locale.ts (languages), content.ts, metadata.ts (SEO)
+├── views/                  # One view per page, shared by every language
+└── content.config.ts       # Product, recipe, and article schemas
 
-public/                     # Served as-is
+scripts/smoke.mjs           # Post-build page checks
 process-html.mjs            # Post-build HTML minifier
-scripts/smoke.mjs           # Serves dist/ and checks every marketing route in both locales
 vercel.json                 # Security headers and caching
-AI_GUIDE.md                 # Conventions for AI coding assistants
+ABOUTGUMIHO.md              # Original copy from the previous gumihollc.com site
 ```
 
-Path aliases (`@components/*`, `@content/*`, `@data/*`, `@images/*`, `@scripts/*`, `@styles/*`, `@utils/*`, `@views/*`, `@/*`) are defined in [`tsconfig.json`](tsconfig.json).
+Path aliases (`@components/*`, `@data/*`, `@images/*`, `@utils/*`, `@views/*`, `@/*`, …) are defined in [`tsconfig.json`](tsconfig.json).
+
+Pages are thin: each file in `src/pages/` renders a view from `src/views/` for its language. Views pull text from `src/copy/` and pass it to section components. To change what a page says, edit the copy. To change which sections a page shows, edit its view.
 
 ---
 
 ## Under the Hood
 
-### Smooth scrolling (Lenis)
-
-[Lenis](https://lenis.dev/) is loaded from `src/assets/scripts/lenisSmoothScroll.js` in `MainLayout.astro` and in `src/components/ui/starlight/Head.astro`. Smooth scrolling can affect accessibility and performance on some devices, so test it with your audience.
-
-To go back to native scrolling, delete this from both files:
-
-```astro
-<script>
-  import '@scripts/lenisSmoothScroll.js';
-</script>
-```
-
-### Animations (GSAP)
-
-[GSAP](https://gsap.com/) animates product and insight detail pages on load. The setup is in the `<script>` blocks of `src/components/sections/products/ProductDetail.astro` and `src/components/sections/insights/InsightDetail.astro`. Tweak the `gsap.from()` calls, or delete the script blocks to drop GSAP.
-
-### Hidden scrollbar
-
-The scrollbar is hidden for a cleaner look. This can hurt usability for some users; to restore it, remove the `scrollbar-hide` class from `<html>` in `MainLayout.astro` and delete the `.scrollbar-hide` styles at the bottom of that file. For styled scrollbars, [tailwind-scrollbar](https://adoxography.github.io/tailwind-scrollbar/) is a good fit.
-
-### SEO and structured data
-
-A page tells `MainLayout` what it is (`title`, `description`, `section`, `kind`); [`src/utils/metadata.ts`](src/utils/metadata.ts) turns that into the full `<head>`: title with site suffix, description, Open Graph and Twitter tags (`title | section | site`), canonical, `hreflang` alternates, and schema.org JSON-LD with the site boilerplate filled in. The locale comes from the URL via the middleware, so pages never pass it, and they never write schema.org objects by hand:
-
-```astro
-<MainLayout
-  title="Example Page"
-  description="What this page is about."
-  section="Insights"
-  kind={{ type: 'Article', image: post.data.cardImage.src }}
->
-  ...
-</MainLayout>
-```
-
-`kind` is `WebPage` (default), `BlogPosting`, `Article` or `Product`. Add a new kind in `metadata.ts`, or extra tags in [`Meta.astro`](src/components/Meta.astro).
-
-### Forms
-
-The contact, newsletter and sign-in/up/recover forms are placeholders wrapped in [`DemoForm.astro`](src/components/ui/forms/DemoForm.astro), which intercepts submit, validates, shows a per-locale success message and resets. To wire a real backend, replace the `<DemoForm>` wrapper with a `<form action=…>` (or your provider's snippet) and drop the `successMessage`; the inputs inside are plain HTML fields.
-
-### robots.txt and sitemap
-
-[`src/pages/robots.txt.ts`](src/pages/robots.txt.ts) generates `robots.txt` at build time and links to the sitemap produced by `@astrojs/sitemap`. Both derive the domain from `site` in `astro.config.mjs`.
-
-### Markdown, MDX, and image pasting
-
-`@astrojs/mdx` is enabled, so content files can be `.md` or `.mdx`. The included [`.vscode/settings.json`](.vscode/settings.json) lets you paste or drag an image into a content file while holding <kbd>Shift</kbd>: VS Code copies it to `src/images/content/<file-name>/` and inserts the Markdown link.
-
-### HTML minification
-
-`pnpm build` finishes by running [`process-html.mjs`](process-html.mjs), which minifies every HTML file in the build output with `html-minifier-terser`.
-
-### Security headers
-
-[`vercel.json`](vercel.json) sets `Content-Security-Policy`, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, and caching headers. Adjust the CSP if you add third-party scripts or image hosts.
-
-### Formatting
-
-Prettier with `prettier-plugin-astro` and `prettier-plugin-tailwindcss` (class sorting) is configured in [`.prettierrc`](.prettierrc). Run `pnpm format:fix` locally; CI runs `pnpm format:check`.
+- **SEO:** each page tells `MainLayout` its `title`, `description`, and `kind`. [`src/utils/metadata.ts`](src/utils/metadata.ts) then builds the rest:
+  - the title with the " | Earnest Gumiho" suffix
+  - Open Graph and Twitter tags
+  - the canonical URL
+  - `hreflang` links
+  - schema.org JSON-LD data (products are marked up as `Product`, recipes as `BlogPosting`)
+- **Sitemap and robots.txt:** both are generated at build time from `site` in [`astro.config.mjs`](astro.config.mjs).
+- **Smooth scrolling:** [Lenis](https://lenis.dev/) is loaded in `MainLayout.astro`. Remove its `<script>` import there to go back to native scrolling.
+- **Animations:** [GSAP](https://gsap.com/) animates product and article pages on load. The code is in the `<script>` blocks of `ProductDetail.astro` and `InsightDetail.astro`.
+- **Hidden scrollbar:** the page scrollbar is hidden by the `scrollbar-hide` class on `<html>` in `MainLayout.astro`. Remove the class to show it.
+- **Dark mode:** there's a toggle in the navbar, and every section has dark styles.
+- **Icons:** SVG icons are defined in [`icons.ts`](src/components/ui/icons/icons.ts) and rendered with `<Icon name="..." class="h-6 w-6" />`. Icon names are typed, so a typo fails the build.
+- **Image pasting:** with the included [`.vscode/settings.json`](.vscode/settings.json), you can paste or drop an image into a Markdown file in VS Code while holding <kbd>Shift</kbd>. VS Code copies the file into the project and inserts the link.
 
 ---
 
-## Contributing
+## Credits
 
-- **Bugs and ideas:** open an [issue](https://github.com/mearashadowfax/ScrewFast/issues) or start a [discussion](https://github.com/mearashadowfax/ScrewFast/discussions/new/choose).
-- **Pull requests:** welcome. Run `pnpm format:fix` and `pnpm build` before submitting.
+This site is built on [ScrewFast](https://github.com/mearashadowfax/ScrewFast) by Emil Gulamov, used under the MIT License. The original copyright and license notice is kept in [LICENSE](LICENSE), as the license requires.
 
-See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
-
-## License
-
-MIT. See [LICENSE](LICENSE).
-
-The company, products, and logos shown are fictional or used for demonstration only and should be replaced in your site.
+Earnest Gumiho, Gumiho LLC, the logo, product photos, and site content belong to Gumiho LLC.
