@@ -15,8 +15,7 @@ interface Props {
 type Testimonial = {
   content: string;
   author: string;
-  role: string;
-  avatarSrc: string;
+  role?: string;
 };
 
 // TypeScript type for stats.
@@ -47,7 +46,6 @@ type StatProps = {
             content={testimonial.content}
             author={testimonial.author}
             role={testimonial.role}
-            avatarSrc={testimonial.avatarSrc}
           />
         ))}
     </div>

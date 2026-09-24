@@ -1,7 +1,9 @@
 ---
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Icon from '@components/ui/icons/Icon.astro';
 
-const { title, btnId, btnTitle, url } = Astro.props;
+const { title, btnId, btnTitle, url, bgImage } = Astro.props;
 const { copy: t } = Astro.locals;
 
 interface Props {
@@ -9,9 +11,19 @@ interface Props {
   btnId: string;
   btnTitle: string;
   url: string;
+  /** Optional photo behind the banner; resized to the banner's width. */
+  bgImage?: ImageMetadata;
 }
 
 const storageKey = `banner-dismissed:${btnId}`;
+
+// The banner is at most `max-w-4xl` (896px) wide; 2x for high-DPI screens.
+const bg = bgImage
+  ? await getImage({ src: bgImage, width: 1792, format: 'webp' })
+  : undefined;
+const bgStyle = bg
+  ? `background-image: linear-gradient(rgb(0 0 0 / 0.45), rgb(0 0 0 / 0.45)), url('${bg.src}')`
+  : undefined;
 ---
 
 <astro-banner btnId={btnId} storageKey={storageKey} class="hidden">
@@ -20,18 +32,37 @@ const storageKey = `banner-dismissed:${btnId}`;
     role="region"
     aria-label={t.banner.region}
   >
-    <div class="rounded-xl bg-neutral-800 bg-[url('/banner-pattern.svg')] bg-cover bg-center bg-no-repeat p-4 text-center shadow-xs dark:bg-neutral-200">
+    <div
+      class:list={[
+        'rounded-xl bg-cover bg-center bg-no-repeat p-4 text-center shadow-xs',
+        bg
+          ? 'bg-neutral-800'
+          : "bg-neutral-800 bg-[url('/banner-pattern.svg')] dark:bg-neutral-200",
+      ]}
+      style={bgStyle}
+    >
       <div class="flex items-center justify-center">
         <div class="ml-auto">
           {title && (
-            <p class="me-2 inline-block font-medium text-neutral-50 dark:text-neutral-700">
+            <p
+              class:list={[
+                'me-2 inline-block font-medium text-neutral-50',
+                !bg && 'dark:text-neutral-700',
+              ]}
+            >
               {title}
             </p>
           )}
           <a
-            class="group inline-flex items-center gap-x-2 rounded-full border-2 border-neutral-50 px-3 py-2 text-sm font-semibold text-neutral-50 backdrop-brightness-75 transition duration-300 hover:border-neutral-100/70 hover:text-neutral-50/70 disabled:pointer-events-none disabled:opacity-50 sm:backdrop-brightness-100 dark:border-neutral-700 dark:text-neutral-700 dark:backdrop-brightness-100 dark:hover:border-neutral-700/70 dark:hover:text-neutral-800/70 dark:focus:outline-hidden"
+            class:list={[
+              'group inline-flex items-center gap-x-2 rounded-full border-2 border-neutral-50 px-3 py-2 text-sm font-semibold text-neutral-50 transition duration-300 hover:border-neutral-100/70 hover:text-neutral-50/70 disabled:pointer-events-none disabled:opacity-50 dark:focus:outline-hidden',
+              bg
+                ? 'bg-neutral-900/30 backdrop-blur-xs'
+                : 'backdrop-brightness-75 sm:backdrop-brightness-100 dark:border-neutral-700 dark:text-neutral-700 dark:backdrop-brightness-100 dark:hover:border-neutral-700/70 dark:hover:text-neutral-800/70',
+            ]}
             href={url}
             target="_blank"
+            rel="noopener noreferrer"
           >
             {btnTitle}
             <Icon

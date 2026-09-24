@@ -4,53 +4,46 @@
  * (`copy.nav.labels`, `copy.nav.footer.sections`), so translators never touch
  * a path and code never keys on a translated label.
  */
-export type NavLinkId = 'home' | 'products' | 'services' | 'blog' | 'contact';
+import { CONTACT, SHOP } from './constants';
+
+export type NavLinkId =
+  'home' | 'products' | 'about' | 'blog' | 'faq' | 'contact';
 
 export const navLinks: { id: NavLinkId; path: string }[] = [
   { id: 'home', path: '/' },
   { id: 'products', path: '/products' },
-  { id: 'services', path: '/services' },
+  { id: 'about', path: '/about' },
   { id: 'blog', path: '/blog' },
+  { id: 'faq', path: '/faq' },
   { id: 'contact', path: '/contact' },
 ];
 
-export type FooterSectionId = 'ecosystem' | 'company';
+export type FooterSectionId = 'shop' | 'company';
 export type FooterLinkId =
-  | 'documentation'
-  | 'tools'
-  | 'services'
-  | 'about'
-  | 'blog'
-  | 'careers'
-  | 'customers';
+  'products' | 'amazon' | 'recipes' | 'about' | 'blog' | 'faq' | 'contact';
 
 export const footerSections: {
   id: FooterSectionId;
   links: { id: FooterLinkId; path: string; badge?: 'hiring' }[];
 }[] = [
   {
-    id: 'ecosystem',
+    id: 'shop',
     links: [
-      { id: 'documentation', path: '/welcome-to-docs/' },
-      { id: 'tools', path: '/products' },
-      { id: 'services', path: '/services' },
+      { id: 'products', path: '/products' },
+      { id: 'amazon', path: SHOP.amazonUrl },
+      { id: 'recipes', path: '/blog' },
     ],
   },
   {
     id: 'company',
     links: [
-      { id: 'about', path: '#' },
-      { id: 'blog', path: '/blog' },
-      { id: 'careers', path: '#', badge: 'hiring' },
-      { id: 'customers', path: '#' },
+      { id: 'about', path: '/about' },
+      { id: 'faq', path: '/faq' },
+      { id: 'contact', path: '/contact' },
     ],
   },
 ];
 
 export const socialLinks = {
-  facebook: 'https://www.facebook.com/',
-  x: 'https://twitter.com/',
-  github: 'https://github.com/mearashadowfax/ScrewFast',
-  google: 'https://www.google.com/',
-  slack: 'https://slack.com/',
+  instagram: CONTACT.instagramUrl,
 };

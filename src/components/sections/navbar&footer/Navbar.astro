@@ -1,12 +1,12 @@
 ---
 import ThemeIcon from '@components/ThemeIcon.astro';
 import NavLink from '@components/ui/links/NavLink.astro';
-import Authentication from '../misc/Authentication.astro';
 import BrandLogo from '@components/BrandLogo.astro';
+import { SITE } from '@data/constants';
 import LanguagePicker from '@components/ui/LanguagePicker.astro';
 import NavbarToggle from '@components/ui/buttons/NavbarToggle.astro';
 import { navLinks } from '@data/navigation';
-import { localePath } from '@utils/locale';
+import { MARKETING_LOCALES, localePath } from '@utils/locale';
 
 const { locale, copy: t } = Astro.locals;
 ---
@@ -15,7 +15,7 @@ const { locale, copy: t } = Astro.locals;
 <header class="sticky inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start">
   {/* Navigation container */}
   <nav
-    class="relative mx-2 w-full rounded-[36px] border border-yellow-100/40 bg-yellow-50/60 px-4 py-3 backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto dark:border-neutral-700/40 dark:bg-neutral-800/80 dark:backdrop-blur-md"
+    class="relative mx-2 w-full rounded-[36px] border border-pink-100/40 bg-pink-50/60 px-4 py-3 backdrop-blur-md md:flex md:items-center md:justify-between md:px-6 md:py-0 lg:px-8 xl:mx-auto dark:border-neutral-700/40 dark:bg-neutral-800/80 dark:backdrop-blur-md"
     aria-label="Global"
   >
     <div class="flex items-center justify-between">
@@ -23,9 +23,9 @@ const { locale, copy: t } = Astro.locals;
       <a
         class="flex-none rounded-lg text-xl font-bold ring-zinc-500 outline-hidden focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden"
         href={localePath(locale)}
-        aria-label="ScrewFast"
+        aria-label={SITE.title}
       >
-        <BrandLogo class="h-auto w-24" />
+        <BrandLogo />
       </a>
       <NavbarToggle target="navbar-collapse-with-animation" />
       {/* ThemeIcon component specifically for smaller screens */}
@@ -40,7 +40,7 @@ const { locale, copy: t } = Astro.locals;
     >
       {/* Navigation links container */}
       <div class="mt-5 flex flex-col gap-x-0 gap-y-4 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-4 md:gap-y-0 md:ps-7 lg:gap-x-7">
-        {/* Navigation links and Authentication component */}
+        {/* Navigation links */}
         {navLinks.map(link => (
           <NavLink
             url={localePath(locale, link.path)}
@@ -48,8 +48,7 @@ const { locale, copy: t } = Astro.locals;
           />
         ))}
 
-        <Authentication />
-        <LanguagePicker />
+        {MARKETING_LOCALES.length > 1 && <LanguagePicker />}
         {/* ThemeIcon component specifically for larger screens */}
         <span class="hidden md:inline-block">
           <ThemeIcon />

@@ -1,22 +1,32 @@
 [
   {
-    "heading": "Dedicated Teams",
-    "content": "Benefit from our committed teams who ensure your success is personal. Count on expert guidance and exceptional results throughout your project journey.",
-    "svg": "groups"
+    "heading": "Boosts Energy and Reduces Fatigue",
+    "content": "Korean ginseng is popular for supporting energy levels and helping combat feelings of tiredness, a natural boost in health drinks and teas.",
+    "svg": "rocket"
   },
   {
-    "heading": "Simplicity and Affordability",
-    "content": "Find easy-to-use, affordable solutions with ScrewFast's line of tools and equipment. Our products make procurement simple and keep projects within budget.",
+    "heading": "Supports a Balanced Lifestyle",
+    "content": "Its adaptogenic qualities make it a favored part of a balanced diet and wellness routine, for staying focused and energized throughout the day.",
     "svg": "verified"
   },
   {
-    "heading": "Comprehensive Documentation",
-    "content": "Integrate with ease using ScrewFast's exhaustive guides and libraries. Achieve seamless product adoption with our full suite of documentation designed for your success.",
-    "svg": "books"
+    "heading": "Aids in Relaxation",
+    "content": "The natural compounds in Korean ginseng are said to help promote relaxation and a calm state of mind, contributing to overall wellness.",
+    "svg": "community"
   },
   {
-    "heading": "User-Centric Design",
-    "content": "Experience the difference with ScrewFast's user-focused design – where functionality meets practicality for an enhanced work experience.",
-    "svg": "frame"
+    "heading": "Enhances Skin Health",
+    "content": "A popular skincare ingredient thanks to its antioxidant properties, known to support healthy-looking skin and hydration.",
+    "svg": "sparks"
+  },
+  {
+    "heading": "Promotes General Vitality",
+    "content": "Regular consumption of Korean ginseng, in forms like tea or extracts, is associated with feeling more energized and ready to tackle daily activities.",
+    "svg": "earth"
+  },
+  {
+    "heading": "Natural Culinary Ingredient",
+    "content": "Beyond wellness, Korean ginseng is a traditional ingredient in Korean soups and teas, offering a unique flavor and cultural significance.",
+    "svg": "house"
   }
 ]

@@ -20,6 +20,7 @@ const {
   reviews,
   src,
   alt,
+  imagePosition = 'center',
 } = Astro.props;
 
 // Define TypeScript interface for props
@@ -37,6 +38,8 @@ interface Props {
   reviews?: string;
   src?: any;
   alt?: string;
+  /** CSS object-position for the cropped hero image, e.g. '50% 75%'. */
+  imagePosition?: string;
 }
 ---
 
@@ -81,12 +84,12 @@ interface Props {
         <Image
           src={src}
           alt={alt}
-          class="h-full w-full scale-110 object-cover object-center"
+          class="h-full w-full scale-110 object-cover"
+          style={{ objectPosition: imagePosition }}
           draggable={'false'}
           loading="eager"
           fetchpriority="high"
           width={812}
-          height={515}
           format={'avif'}
         />
       )}

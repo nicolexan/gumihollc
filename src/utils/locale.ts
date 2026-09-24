@@ -1,20 +1,28 @@
 /**
  * Marketing-site locale module.
  *
- * Owns everything the marketing pages (`src/pages/` and `src/pages/fr/`)
+ * Owns everything the marketing pages (`src/pages/` and `src/pages/<locale>/`)
  * need to know about locales: which ones exist, how to resolve the current
  * one from a request, how to localise a path, and how to find the same page
- * in another locale. Nothing else in the codebase should parse `/fr` out of
+ * in another locale. Nothing else in the codebase should parse a locale out of
  * a pathname or hard-code a locale prefix.
- *
- * Docs (Starlight) have their own locale handling; this module is not used
- * there.
  *
  * Every function here is pure so it can be unit-tested without Astro.
  */
 
-export const MARKETING_LOCALES = ['en', 'fr'] as const;
-export type MarketingLocale = (typeof MARKETING_LOCALES)[number];
+// Every locale with a copy table. To add one: append it here, add its
+// LOCALE_INFO entry, create `src/copy/<locale>.ts`, and mirror `src/pages/`
+// under `src/pages/<locale>/`.
+export const SUPPORTED_LOCALES = ['en', 'ko'] as const;
+export type MarketingLocale = (typeof SUPPORTED_LOCALES)[number];
+
+// Locales actually published: routes, hreflang links and the language picker.
+// Korean is translated but on hold. To publish it: add 'ko' here, rename
+// `src/pages/_ko/` to `src/pages/ko/` (Astro ignores `_` folders), add `ko`
+// to the sitemap locales in `astro.config.mjs`, add '/ko' to
+// LOCALE_PREFIXES in `scripts/smoke.mjs`, and restore the `/ko/:path*`
+// rewrite in `vercel.json`.
+export const MARKETING_LOCALES: readonly MarketingLocale[] = ['en'];
 
 export const DEFAULT_LOCALE: MarketingLocale = 'en';
 
@@ -46,12 +54,12 @@ export const LOCALE_INFO: Record<
     inLanguage: 'en-US',
     intl: 'en-US',
   },
-  fr: {
-    label: 'Français',
-    lang: 'fr',
-    ogLocale: 'fr_FR',
-    inLanguage: 'fr',
-    intl: 'fr-FR',
+  ko: {
+    label: '한국어',
+    lang: 'ko',
+    ogLocale: 'ko_KR',
+    inLanguage: 'ko-KR',
+    intl: 'ko-KR',
   },
 };
 
@@ -66,8 +74,8 @@ export function isMarketingLocale(value: unknown): value is MarketingLocale {
  * Split a pathname into the locale it is prefixed with and the rest of the
  * path. The default locale has no prefix.
  *
- *   '/fr/blog/post-1/' -> { locale: 'fr', path: '/blog/post-1/' }
- *   '/fr'              -> { locale: 'fr', path: '/' }
+ *   '/ko/blog/post-1/' -> { locale: 'ko', path: '/blog/post-1/' }
+ *   '/ko'              -> { locale: 'ko', path: '/' }
  *   '/blog/'           -> { locale: 'en', path: '/blog/' }
  */
 export function splitLocale(pathname: string): {
@@ -87,7 +95,7 @@ export function splitLocale(pathname: string): {
 
 /**
  * Resolve the locale of the current request. The pathname is authoritative
- * for marketing pages; `Astro.currentLocale` (driven by Starlight's i18n
+ * for marketing pages; `Astro.currentLocale` (driven by Astro's i18n
  * config) is only a fallback.
  */
 export function resolveLocale(
@@ -103,10 +111,10 @@ export function resolveLocale(
 /**
  * Build a site-relative path for a locale.
  *
- *   localePath('fr', '/products')  -> '/fr/products'
+ *   localePath('ko', '/products')  -> '/ko/products'
  *   localePath('en', '/products')  -> '/products'
- *   localePath('fr')               -> '/fr'
- *   localePath('fr', '#')          -> '#'   (fragments and absolute URLs pass through)
+ *   localePath('ko')               -> '/ko'
+ *   localePath('ko', '#')          -> '#'   (fragments and absolute URLs pass through)
  */
 export function localePath(locale: MarketingLocale, path = '/'): string {
   if (path.startsWith('#') || /^[a-z]+:/i.test(path)) return path;

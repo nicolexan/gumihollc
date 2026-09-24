@@ -1,29 +1,33 @@
 {
-  "subTitle": "Ask us anything about our brand and products, and get factual responses.",
+  "subTitle": "Everything you need to know about our Korean ginseng powder. Can't find your answer? Contact us.",
   "faqs": [
     {
-      "question": "What types of tools are included in the Starter Kit?",
-      "answer": "The Starter Kit features essential hand and power tools for diverse DIY projects, including hammers, drills, screwdrivers, and a variety of fasteners. It's a curated selection to help beginners and experienced DIYers alike tackle most home improvement tasks."
+      "question": "What is in Earnest Gumiho Ginseng Powder?",
+      "answer": "Our powder is made from genuine Korean ginseng (Panax ginseng) grown in Geumsan, Korea, blended with yam for a smooth taste and texture. There are no added chemicals, sugar, or artificial ingredients."
     },
     {
-      "question": "Can I upgrade from the Starter Kit to the Professional Toolbox?",
-      "answer": "Absolutely! You can upgrade to the Professional Toolbox at any time to access a wider range of high-quality tools, enjoy priority customer support, and receive exclusive content. Contact our support team for a seamless transition."
+      "question": "Does Lululala Ginseng Powder contain fish?",
+      "answer": "Yes. Lululala Ginseng Powder contains fish collagen peptides, so it is not suitable for anyone with a fish allergy or following a vegetarian or vegan diet. Our classic Ginseng Powder contains only Korean ginseng and yam."
     },
     {
-      "question": "What discounts are available for bulk orders through the Professional Toolbox plan?",
-      "answer": "Professional Toolbox members are entitled to exclusive discounts on bulk orders, the percentage of which may vary depending on the order volume. Get in touch with us to discuss your needs, and we'll provide a tailored discount structure."
+      "question": "Why matured ginseng?",
+      "answer": "Ginseng harvested after four years has reached a mature stage, rich in ginsenosides, the root's primary active compounds. It also gives a rich, deep flavor that works beautifully in drinks."
     },
     {
-      "question": "What kind of customer support can I expect?",
-      "answer": "All our customers receive dedicated email support. With the Starter Kit, you'll receive our standard support, while the Professional Toolbox plan upgrades you to priority support, meaning faster response times and specialized assistance."
+      "question": "Where is your ginseng grown and made?",
+      "answer": "Our ginseng is sourced and manufactured in Geumsan, Korea, renowned as the capital of Korean ginseng. We import it directly into the U.S. to preserve its natural potency and flavor."
     },
     {
-      "question": "How current are the online resources and tutorials?",
-      "answer": "We regularly update our online resources and tutorials to reflect the latest trends in DIY and construction, as well as introductions to new tools and techniques. Our material aims to be comprehensive and user-friendly for all skill levels."
+      "question": "How do I use the powder?",
+      "answer": "Mix about 10g into hot or cold milk for a latte, or blend it with milk, ice, and a little honey or syrup for a shake or slush. See our recipes for step-by-step instructions."
     },
     {
-      "question": "Does ScrewFast offer services for large-scale construction projects?",
-      "answer": "Yes, our Enterprise Solutions are designed for larger companies requiring comprehensive services. We provide consultation, planning, and supply of high-grade tools and materials, as well as staffing solutions for substantial construction needs. Contact us for a customized quote."
+      "question": "How should I store it?",
+      "answer": "Keep the package sealed in a cool, dry place away from direct sunlight. Some individually packaged products should be consumed immediately after opening or refrigerated."
+    },
+    {
+      "question": "Where can I buy it?",
+      "answer": "Our ginseng powder is available on Amazon: search for \"Earnest Gumiho\" or use the Buy on Amazon link at the bottom of any page. For wholesale or bulk inquiries, please contact us directly."
     }
   ]
 }

@@ -3,16 +3,18 @@ import { readFile } from 'node:fs/promises';
 import { extname, isAbsolute, relative, resolve } from 'node:path';
 
 const DIST = resolve(new URL('../dist/', import.meta.url).pathname);
-// Marketing routes exist once per locale (src/pages/ vs src/pages/fr/).
-const LOCALE_PREFIXES = ['', '/fr'];
+// Marketing routes exist once per published locale (see MARKETING_LOCALES).
+// Add '/ko' here when Korean is published.
+const LOCALE_PREFIXES = [''];
 const MARKETING_ROUTES = [
   '/',
   '/products/',
-  '/products/item-a765/',
-  '/services/',
+  '/products/ginseng-powder/',
+  '/about/',
+  '/faq/',
   '/blog/',
-  '/blog/post-1/',
-  '/insights/insight-1/',
+  '/blog/ginseng-slush/',
+  '/insights/how-our-ginseng-is-made/',
   '/contact/',
 ];
 const ROUTES = [
@@ -20,22 +22,16 @@ const ROUTES = [
     MARKETING_ROUTES.map(route => `${prefix}${route}`)
   ),
   '/404',
-  '/fr/404/',
 ];
 
 // Cheap content assertions on top of the status check.
 const EXPECTATIONS = {
-  '/fr/': [
-    '<html lang="fr"',
-    '<meta property="og:locale" content="fr_FR"',
-    'hreflang="en" href="https://screwfast.uk"',
-  ],
-  '/': ['<html lang="en"', 'hreflang="fr" href="https://screwfast.uk/fr"'],
-  '/fr/404/': ['<html lang="fr"'],
-  '/contact/': ['data-demo-form', 'data-demo-status'],
-  '/fr/contact/': ['data-demo-form', 'data-demo-status'],
-  '/blog/post-1/': ['"@type":"BlogPosting"'],
-  '/fr/blog/post-1/': ['"inLanguage":"fr"'],
+  '/': ['<html lang="en"', 'hreflang="en" href="https://gumihollc.com"'],
+  '/products/lululala-ginseng-powder/': ['amazon.com/dp/B0HGQB1TKT'],
+  '/contact/': ['services@gumihollc.com', 'GumihoLLC'],
+  '/faq/': ['hs-accordion'],
+  '/blog/ginseng-slush/': ['"@type":"BlogPosting"'],
+  '/products/ginseng-powder/': ['amazon.com/dp/B0F6W4KTVG'],
 };
 
 const MIME = {

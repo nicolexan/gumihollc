@@ -1,0 +1,67 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import MainSection from '@components/ui/blocks/MainSection.astro';
+import AlternatingSections, {
+  type Article,
+} from '@components/ui/blocks/AlternatingSections.astro';
+import farmers from '@images/gumiho/ginseng from farmers.webp';
+import moreFarmers from '@images/gumiho/more ginseng from farmers.webp';
+import monument from '@images/gumiho/geumsan korea ginseng monument.webp';
+import manufacturer from '@images/gumiho/manufacturer picture.webp';
+import shipping from '@images/gumiho/ginseng-shipping-photo.webp';
+import icedLatte from '@images/gumiho/background iced latte.jpg';
+import { getCopy } from '@/copy';
+import { localePath, type MarketingLocale } from '@utils/locale';
+
+/** The About / Our Story page in one locale. */
+interface Props {
+  locale: MarketingLocale;
+}
+
+const { locale } = Astro.props;
+const copy = getCopy(locale).about;
+const articleCopy = copy.articles;
+
+const articles: Article[] = [
+  {
+    title: articleCopy.mission.title,
+    subTitle: articleCopy.mission.subTitle,
+    images: [
+      { src: farmers, alt: articleCopy.mission.imageAlts[0] },
+      { src: moreFarmers, alt: articleCopy.mission.imageAlts[1] },
+    ],
+  },
+  {
+    title: articleCopy.geumsan.title,
+    subTitle: articleCopy.geumsan.subTitle,
+    images: [{ src: monument, alt: articleCopy.geumsan.imageAlts[0] }],
+  },
+  {
+    title: articleCopy.manufacturing.title,
+    subTitle: articleCopy.manufacturing.subTitle,
+    images: [
+      { src: manufacturer, alt: articleCopy.manufacturing.imageAlts[0] },
+      { src: shipping, alt: articleCopy.manufacturing.imageAlts[1] },
+    ],
+  },
+  {
+    title: articleCopy.journey.title,
+    subTitle: articleCopy.journey.subTitle,
+    images: [{ src: icedLatte, alt: articleCopy.journey.imageAlts[0] }],
+    cta: { title: articleCopy.journey.cta, url: localePath(locale, '/blog') },
+  },
+];
+---
+
+<MainLayout
+  title={copy.title}
+  description={copy.metaDescription}
+  ogTitle={copy.ogTitle}
+>
+  <MainSection
+    title={copy.intro.title}
+    subTitle={copy.intro.subTitle}
+    cta={{ title: copy.intro.cta, url: localePath(locale, '/products') }}
+  />
+  <AlternatingSections articles={articles} />
+</MainLayout>

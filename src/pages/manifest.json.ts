@@ -1,7 +1,6 @@
 import type { APIRoute, ImageMetadata } from 'astro';
 import { getImage } from 'astro:assets';
-import icon from '@images/icon.png';
-import maskableIcon from '@images/icon-maskable.png';
+import icon from '@images/gumiho/transparent gumihollc logo.png';
 
 interface Favicon {
   purpose: 'any' | 'maskable' | 'monochrome';
@@ -18,7 +17,7 @@ const favicons: Favicon[] = [
   },
   {
     purpose: 'maskable',
-    src: maskableIcon,
+    src: icon,
     sizes,
   },
 ];
@@ -44,14 +43,14 @@ export const GET: APIRoute = async () => {
   );
 
   const manifest = {
-    short_name: 'ScrewFast',
-    name: 'ScrewFast',
+    short_name: 'Gumiho',
+    name: 'Earnest Gumiho',
     icons,
     display: 'minimal-ui',
     id: '/',
     start_url: '/',
-    theme_color: '#FFEDD5',
-    background_color: '#262626',
+    theme_color: '#0a0a0a',
+    background_color: '#ffffff',
   };
 
   return new Response(JSON.stringify(manifest));

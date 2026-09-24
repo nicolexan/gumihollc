@@ -1,26 +1,25 @@
 import faqs from '@data/faqs.json';
 import features from '@data/features.json';
-import pricing from '@data/pricing.json';
 
 /**
- * English copy table. This file defines the shape every other locale must
- * satisfy (see `Copy` in `./index.ts`), so a missing translation fails
- * `astro check` instead of leaking English onto a localised page.
+ * English copy table. This file defines the shape of every locale (see
+ * `Copy` in `./index.ts`). Other locales may leave keys out; those fall back
+ * to the English text here.
  *
- * Paths are unlocalised (`/products`, not `/fr/products`); callers run them
+ * Paths are unlocalised (`/products`, not `/ko/products`); callers run them
  * through `localePath()` from `@utils/locale`.
  */
 export const en = {
   site: {
     /** Default `<meta name="description">` when a page sets none. */
     description:
-      'ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs. Start exploring and contact our sales team for superior quality and reliability.',
+      'Earnest Gumiho brings premium 4-year-old Korean ginseng from Geumsan, Korea, to your table. Pure ginseng powder blended with yam for lattes and shakes, with no added sugar or chemicals.',
     /** schema.org `WebSite.description` in every page's `isPartOf`. */
     descriptionShort:
-      'ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.',
-    ogTitle: 'ScrewFast: Hardware Tools & Construction Services',
+      'Premium 4-year-old Korean ginseng powder from Geumsan, Korea.',
+    ogTitle: 'Earnest Gumiho: Korean Ginseng from Geumsan',
     ogDescription:
-      "Equip your projects with ScrewFast's top-quality hardware tools and expert construction services. Trusted by industry leaders, ScrewFast offers simplicity, affordability, and reliability. Experience the difference with user-centric design and cutting-edge tools. Start exploring now!",
+      "Discover nature's secret: ginseng for energy, focus, and wellness. Earnest Gumiho's ginseng powder is made from genuine 4-year-old Korean ginseng grown in Geumsan, Korea.",
   },
 
   layout: {
@@ -37,124 +36,31 @@ export const en = {
     labels: {
       home: 'Home',
       products: 'Products',
-      services: 'Services',
-      blog: 'Blog',
+      about: 'Our Story',
+      blog: 'Recipes',
+      faq: 'FAQ',
       contact: 'Contact',
     },
     footer: {
       /** Section titles and link labels for `footerSections` in `@data/navigation`, keyed by id. */
       sectionTitles: {
-        ecosystem: 'Ecosystem',
+        shop: 'Shop',
         company: 'Company',
       },
       links: {
-        documentation: 'Documentation',
-        tools: 'Tools & Equipment',
-        services: 'Construction Services',
-        about: 'About us',
+        products: 'Our Products',
+        amazon: 'Buy on Amazon',
+        recipes: 'Recipes',
+        about: 'Our Story',
         blog: 'Blog',
-        careers: 'Careers',
-        customers: 'Customers',
+        faq: 'FAQ',
+        contact: 'Contact',
       },
-      hiringBadge: "We're hiring!",
-      stayUpToDate: 'Stay up to date',
-      stayUpToDateContent:
-        'Stay updated with the latest tools and exclusive deals.',
-      craftedBy: 'Crafted by',
-      newsletterDemoMessage:
-        'Thanks! (Demo only — wire an email service to collect real subscribers.)',
+      tagline: 'Best Quality Ginseng from Geumsan, Korea',
+      getInTouch: 'Get in touch',
+      kakaoTalk: 'KakaoTalk',
+      rightsReserved: 'All rights reserved.',
     },
-    /** Text for the optional mega menu (`@data/mega_link`). */
-    megaMenu: {
-      services: {
-        guides: {
-          title: 'Explore Advice and Explanations',
-          description:
-            "Dive deep into helpful guides and explanations for all of ScrewFast's features",
-        },
-        integrations: {
-          title: 'Discover Integrations',
-          description:
-            'Supercharge Your Workflow. Seamless integrations with all your favorite tools',
-        },
-        experts: {
-          title: 'Expert Services',
-          description: "Go beyond tools with ScrewFast's expert services",
-        },
-        tools: {
-          title: 'Cutting-Edge Tools',
-          description:
-            "Build Smarter, Faster. Experience next-level efficiency with ScrewFast's cutting-edge construction tools",
-        },
-        plans: {
-          title: 'Simple Plans',
-          description:
-            "Boost your efficiency with ScrewFast's straightforward, value-driven plans",
-        },
-        community: {
-          title: 'Community Forum',
-          description: 'Learn, share, and connect with other ScrewFast users',
-        },
-      },
-      successStories: 'Success Stories',
-      successStory: {
-        description:
-          'See how ScrewFast has empowered businesses of all sizes to achieve outstanding results.',
-        imageAlt: 'Portrait of a smiling person',
-      },
-      learnMore: 'Learn more',
-    },
-  },
-
-  forms: {
-    email: 'Email',
-    emailAddress: 'Email address',
-    emailPlaceholder: 'Enter your email',
-    emailInvalid:
-      'Please include a valid email address so we can get back to you',
-    subscribe: 'Subscribe',
-    phone: 'Phone Number',
-    password: 'Password',
-    confirmPassword: 'Confirm Password',
-    forgotPassword: 'Forgot password?',
-    passwordHint: '8+ characters required',
-    passwordMismatch: 'Password does not match the password',
-    rememberMe: 'Remember me',
-    acceptTerms: 'I accept the ',
-    termsAndConditions: 'Terms and Conditions',
-    or: 'Or',
-    demoFallbackMessage: 'Demo only — this form is not connected to a backend.',
-  },
-
-  auth: {
-    logIn: 'Log in',
-    signIn: 'Sign in',
-    signUp: 'Sign up',
-    signInWithGoogle: 'Sign in with Google',
-    signUpWithGoogle: 'Sign up with Google',
-    noAccountYet: "Don't have an account yet?",
-    signUpHere: 'Sign up here',
-    alreadyHaveAccount: 'Already have an account?',
-    signInHere: 'Sign in here',
-    forgotPasswordTitle: 'Forgot password?',
-    rememberYourPassword: 'Remember your password?',
-    resetPassword: 'Reset password',
-    credentialsDemoNotice:
-      'Demo only – connect a real auth provider before collecting credentials.',
-    recoveryDemoNotice:
-      'Demo only – password recovery is not connected to a backend.',
-    signInDemoMessage: 'Demo only – sign-in is not connected to a backend.',
-    registerDemoMessage:
-      'Demo only – registration is not connected to a backend.',
-    recoverDemoMessage:
-      'Demo only – password recovery is not connected to a backend.',
-  },
-
-  share: {
-    share: 'Share',
-    shareOn: (platform: string) => `Share on ${platform}`,
-    copied: 'Copied',
-    copyLink: 'Copy link',
   },
 
   banner: {
@@ -163,287 +69,220 @@ export const en = {
   },
 
   blog: {
-    readMore: 'Read More',
-    minRead: (minutes: number) => `${minutes} min read`,
-    relatedArticles: 'Related articles',
-    wasHelpful: 'Was this post helpful?',
-    yes: 'Yes',
-    no: 'No',
-    ogSection: 'Blog',
+    readMore: 'View Recipe',
+    relatedArticles: 'More recipes',
+    ogSection: 'Recipes',
   },
 
   insights: {
     readMore: 'Read more',
     tableOfContents: 'Table of Contents:',
-    ogSection: 'Insights',
+    ogSection: 'Learn',
   },
 
   products: {
-    ogSection: 'Hardware Tools',
+    ogSection: 'Korean Ginseng',
     tabs: 'Tabs',
   },
 
   notFound: {
     title: 'Page Not Found',
-    subTitle: "Oops, this isn't the tool you were looking for!",
+    subTitle: 'Even we gets lost sometimes.',
     content:
-      "Don't let this hiccup slow you down. Let's get you back to building your masterpiece.",
+      "The page you're looking for doesn't exist. Let's get you back on the trail.",
     goHome: 'Go Home',
     goBack: 'Go Back',
   },
 
   home: {
-    banner: 'Explore ScrewFast on GitHub',
+    banner: {
+      title: 'Try our best-selling ginseng powder',
+      btn: 'See us on Amazon',
+    },
     hero: {
       title:
-        'Equip Your Projects with <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>',
+        'Discover Nature’s Secret with <span class="text-pink-500 dark:text-pink-300">Earnest Gumiho</span>',
       subTitle:
-        'Top-quality hardware tools and expert construction services for every project need.',
-      primaryBtn: 'Start Exploring',
-      secondaryBtn: 'Contact Sales Team',
-      rating: '<span class="font-bold">4.8</span> / 5',
-      reviews: 'From Over <span class="font-bold">12.8k</span> Reviews',
+        'The best quality ginseng from Geumsan, Korea. Ginseng for energy, focus, and wellness, made for your everyday latte.',
+      primaryBtn: 'Shop Ginseng Powder',
+      secondaryBtn: 'See Recipes',
       imageAlt:
-        'Stack of ScrewFast product boxes containing assorted hardware tools',
-    },
-    clients: {
-      title: 'Trusted by Industry Leaders',
-      subTitle: 'Experience the reliability chosen by industry giants.',
+        'A hot ginseng latte and an iced ginseng latte beside a fresh ginseng root',
     },
     featuresGeneral: {
-      title: 'Meeting Industry Demands',
+      title: 'Benefits of Korean Ginseng',
       subTitle:
-        "At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors. From cutting-edge tools to expert services, we're dedicated to helping you overcome obstacles and achieve your goals.",
-      imageAlt: 'ScrewFast products in floating boxes',
+        'Korean ginseng (Panax ginseng), known as "Insam" in Korea, has been part of Korean culture and tradition for centuries. Its primary active components, ginsenosides, are believed to support general health and vitality.',
+      imageAlt: 'Green mountains of Korea seen from a traditional temple',
     },
     featuresNavs: {
       title:
-        'Customize <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>\'s offerings to perfectly suit your hardware and construction needs.',
+        'From the fields of <span class="text-pink-500 dark:text-pink-300">Geumsan</span> to your table.',
       tabs: {
-        tools: {
-          heading: 'Cutting-Edge Tools',
+        origin: {
+          heading: 'Grown in Geumsan',
           content:
-            "Empower your projects with ScrewFast's cutting-edge tools. Experience enhanced efficiency in construction management with our sophisticated automated solutions.",
-          alt: 'Yellow and black heavy equipment on brown grass field',
+            'Geumsan is famous across Korea for its top-quality ginseng. Our ginseng is sourced directly from its most fertile and trusted farms, where centuries-old tradition meets careful cultivation.',
+          alt: 'Geumsan, Korea, the ginseng capital',
         },
-        dashboard: {
-          heading: 'Intuitive Dashboards',
+        harvest: {
+          heading: 'Harvested at 4 Years',
           content:
-            "Navigate with ease using ScrewFast's intuitive dashboards. Set up and oversee your projects seamlessly, with user-friendly interfaces designed for quick and effective workflow management.",
-          alt: 'A screenshot or graphic representation of the intuitive dashboard',
+            'We use genuine 4-year-old Korean ginseng, harvested at peak maturity for a rich, deep flavor and plenty of naturally occurring ginsenosides.',
+          alt: 'Freshly harvested ginseng from Geumsan farmers',
         },
-        features: {
-          heading: 'Robust Features',
+        purity: {
+          heading: 'Nothing Artificial',
           content:
-            "Minimize complexity, maximize productivity. ScrewFast's robust features are engineered to streamline your construction process, delivering results that stand out for their excellence.",
-          alt: 'Gray metal building frame near tower crane during daytime',
+            'Manufactured in Geumsan and imported directly into the U.S. No added chemicals, sugar, or artificial ingredients: just ginseng, blended with yam for a smooth taste and texture.',
+          alt: 'A spoonful of Earnest Gumiho ginseng powder on a white background',
         },
       },
     },
     testimonials: {
-      title: 'Fast-Track Your Projects',
+      title: 'What Our Customers Say',
       subTitle:
-        'At ScrewFast, we ensure a swift start with instant account setup. Experience the speed of construction redefined.',
+        'Ginseng lattes, shakes, and slushes: here is how our customers enjoy Earnest Gumiho.',
+      // Placeholder: replace with real customer reviews.
       quotes: [
         {
           content:
-            'ScrewFast dramatically boosted our project efficiency. Setup was instant, and their rapid response times are phenomenal. Truly a game-changer in hardware and construction support!',
-          author: 'Samantha Ruiz',
-          role: 'Chief Operating Officer | ConstructIt Inc.',
+            'Incorporating the powder into a daily routine has quickly become a morning staple. Dealing with frequent afternoon fatigue meant finding a clean energy source without the dreaded caffeine crash was a true relief. The individual packaging is exceptionally convenient. Tossing a 5g stick into a bag makes it effortless to take on the go, whether mixed into warm water or blended into a post-workout smoothie. The taste carries that characteristic earthy, slightly bitter ginseng profile, but the addition of yam softens the edge, making it surprisingly smooth and palatable. With daily use, a subtle yet steady lift in daily stamina and mental focus became apparent. Alertness during long work hours improved noticeably, and the convenience factor ensures no doses are missed. Anyone looking for a natural way to support vitality through a hassle-free supplement format will find this blend definitely worth adding to the pantry.',
+          author: 'Mike',
+          role: 'Verified Amazon Buyer',
         },
       ],
       statistics: [
         {
-          count: '70k+',
-          description:
-            'customers equipped – from DIY to major construction firms',
+          count: '4 yrs',
+          description: 'grown before harvest, at peak maturity',
+        },
+        { count: '100%', description: 'Korean ginseng sourced from Geumsan' },
+        {
+          count: '0g',
+          description: 'added sugar, chemicals, or artificial ingredients',
         },
         {
-          count: '35%',
-          description:
-            'uptick in project efficiency with ScrewFast tools and services',
-        },
-        {
-          count: '15.3%',
-          description:
-            'reduction in maintenance costs reported by long-term clients',
-        },
-        {
-          count: '2x',
-          description: 'quicker assembly using innovative fastening solutions',
+          count: '10g',
+          description: 'is all it takes for a creamy 12oz latte',
         },
       ],
     },
     faqTitle: 'Frequently<br />asked questions',
-    heroAlt: {
-      title: "Let's Build Together",
-      subTitle:
-        'ScrewFast is an open-source template, meticulously crafted with Astro, Tailwind CSS, and Preline UI frameworks.',
-      btn: 'Continue with Github',
-    },
   },
 
-  services: {
-    title: 'Services',
+  about: {
+    title: 'Our Story',
     metaDescription:
-      'Uniting expertise with your vision, ScrewFast provides exceptional service and comprehensive solutions in the hardware and construction industry, from consultation to project completion.',
-    ogTitle: 'Expert Consultation Services | ScrewFast',
+      'Gumiho LLC brings premium, genuine Korean ginseng from the trusted farms of Geumsan, Korea, to the U.S. Learn about our mission and how our ginseng powder is made.',
+    ogTitle: 'Our Story | Earnest Gumiho',
     intro: {
-      title: 'Uniting Expertise with Your Vision',
+      title: 'Where Tradition Meets Excellence',
       subTitle:
-        'At ScrewFast, we take pride in providing comprehensive solutions and exceptional service in the hardware and construction industry. Our experienced team is dedicated to supporting your project from inception to completion with a range of specialized services.',
-      cta: 'Schedule a Consultation',
+        "Welcome to Gumiho LLC. We specialize in premium Korean ginseng products, sourced directly from Korea's most fertile and trusted farms in Geumsan. Our passion for quality stems from a deep respect for the centuries-old heritage of Korean ginseng, renowned worldwide as a symbol of vitality, resilience, and balance.",
+      cta: 'Shop Ginseng Powder',
     },
     articles: {
-      guidance: {
-        title: 'Delivering Expert Guidance',
+      mission: {
+        title: 'Our Mission',
         subTitle:
-          'Embarking on a construction project can be overwhelming. With our professional consultation services, we guide you through every stage, ensuring you make informed decisions. Whether you are a DIY enthusiast or a skilled contractor, our experts are on hand to offer tailored advice on product selection, project scope, and compliance with local regulations.',
+          'Our mission is simple: to bring you the best quality, genuine Korean ginseng products to enhance your health and well-being. Every root we sell reflects our commitment to purity, authenticity, and excellence, so you receive nothing but the finest nature has to offer.',
         imageAlts: [
-          'Blueprints and digital tablet with construction plans.',
-          'Person working in the office',
+          'Ginseng harvested by farmers in Geumsan',
+          'More freshly harvested ginseng from Geumsan farms',
         ],
       },
-      craftsmanship: {
-        title: 'Transforming Designs into Reality',
+      geumsan: {
+        title: 'Rooted in Geumsan',
         subTitle:
-          'Our skilled craftsmen bring precision and excellence to every construction project. From minor installations to substantial structural work, ScrewFast offers reliable construction services to turn your plans into tangible outcomes. We ensure the highest standards of safety and workmanship, utilizing top-quality tools and materials from our extensive inventory.',
-        imageAlts: ['Construction site before and after'],
-        cta: 'Learn More',
+          'Geumsan is known as the capital of Korean ginseng. Its soil, climate, and generations of growing expertise produce ginseng of unmatched quality, which is why every Earnest Gumiho product starts there.',
+        imageAlts: ['The ginseng monument in Geumsan, Korea'],
       },
-      oversight: {
-        title: 'Navigating Projects with Professional Oversight',
+      manufacturing: {
+        title: 'Carefully Made, Directly Imported',
         subTitle:
-          'Effective project management is at the heart of any successful build. ScrewFast provides thorough planning and robust management services that keep your project on time and within budget. Let us handle the complexities of workflow coordination, resource allocation, and stakeholder communication while you focus on your vision.',
+          'Our ginseng products are sourced and manufactured in Geumsan, where centuries-old traditions and advanced techniques converge. We import them directly into the U.S. so they retain their natural potency and flavor, with no added chemicals, sugar, or artificial ingredients.',
         imageAlts: [
-          'Construction workers orchestrating a project',
-          'Aerial view of managed construction',
+          'Ginseng powder being manufactured in Geumsan',
+          'Earnest Gumiho ginseng packed for shipping',
         ],
       },
-      maintenance: {
-        title: 'Ensuring Long-lasting Performance',
+      journey: {
+        title: 'A Journey to Better Health',
         subTitle:
-          "Our commitment to your project doesn't end at completion. ScrewFast offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
-        imageAlts: [
-          'Man in orange and black vest wearing white helmet holding yellow and black power tool',
-        ],
+          "We believe in the power of Korean ginseng to enrich lives, support a balanced lifestyle, and foster a deeper connection with nature's gifts. Whether you're a longtime ginseng enthusiast or exploring its benefits for the first time, we're here to guide you with a product you can trust.",
+        imageAlts: ['An iced ginseng latte made with Earnest Gumiho powder'],
+        cta: 'Try a Recipe',
       },
-      bespoke: {
-        title: 'Crafting Bespoke Strategies for Unique Challenges',
-        subTitle:
-          'For our larger enterprise clients, ScrewFast offers custom solutions designed to meet specific industry challenges. By understanding your unique needs, we engineer tailored strategies aimed at optimizing your operations, enhancing efficiency, and driving your business forward.',
-        imageAlts: [
-          'In progress building structure',
-          'Brown and gray building under construction',
-        ],
-        cta: 'Read more',
-      },
-    },
-    stats: {
-      title: 'By the Numbers',
-      subTitle:
-        'Our commitment to quality and reliability is evident in every project we undertake. At ScrewFast, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last.',
-      mainStatTitle: '96%',
-      mainStatSubTitle:
-        'of our clients rate their experience with ScrewFast as exceptional',
-      stats: [
-        { stat: '99.8%', description: 'project completion rate' },
-        { stat: '5,000+', description: 'successful installations' },
-        { stat: '85%', description: 'client growth year-over-year' },
-      ],
     },
   },
 
   contact: {
     title: 'Contact',
     metaDescription:
-      "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.",
-    ogTitle: 'Contact Us | ScrewFast',
+      'Questions about our Korean ginseng powder, wholesale, or your order? Reach Gumiho LLC by email, KakaoTalk, or Instagram.',
+    ogTitle: 'Contact Us | Earnest Gumiho',
     heading: 'Contact us',
     subTitle:
-      "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.",
-    formTitle: 'Fill in the form below',
-    formSubTitle: "We'll get back to you in 1-2 business days.",
-    firstName: 'First Name',
-    lastName: 'Last Name',
-    details: 'Details',
-    send: 'Send Message',
-    demoMessage:
-      'Thanks! (Demo only — wire a form endpoint to receive real messages.)',
-    knowledgeHeading: 'Knowledgebase',
-    knowledgeContent: 'Browse through all of our knowledgebase articles.',
-    knowledgeLink: 'Visit guides & tutorials',
+      "Questions about our ginseng, wholesale, or your order? We'd love to hear from you.",
+    emailHeading: 'Email us',
+    emailContent: 'Prefer the written word? Drop us a line.',
+    kakaoHeading: 'KakaoTalk',
+    kakaoContent: 'Message us on KakaoTalk.',
+    instagramHeading: 'Instagram',
+    instagramContent: 'Follow along for recipes and news.',
     faqHeading: 'FAQ',
-    faqContent: 'Explore our FAQ for quick, clear answers to common queries.',
+    faqContent: 'Explore our FAQ for quick, clear answers to common questions.',
     faqLink: 'Visit FAQ',
-    officeHeading: 'Visit our office',
-    officeContent: 'UK ScrewFast',
-    emailHeading: 'Contact us by email',
-    emailContent: 'Prefer the written word? Drop us an email at',
+  },
+
+  faq: {
+    title: 'FAQ',
+    metaDescription:
+      'Answers to common questions about Earnest Gumiho Korean ginseng powder: ingredients, serving, storage, and ordering.',
+    ogTitle: 'Frequently Asked Questions | Earnest Gumiho',
+    heading: 'Frequently<br />asked questions',
   },
 
   blogIndex: {
-    title: 'Blog',
+    title: 'Recipes & Learning',
     metaDescription:
-      "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts.",
-    ogTitle: 'Construction Industry Blog | ScrewFast',
-    heading: 'Your Gateway to Construction Excellence',
+      'Ginseng latte, iced latte, and slush recipes made with Earnest Gumiho Korean ginseng powder, plus guides to the history and benefits of Korean ginseng.',
+    ogTitle: 'Ginseng Recipes | Earnest Gumiho',
+    heading: 'Ginseng Recipes',
     subTitle:
-      'Explore the latest news, tips, and insights from ScrewFast to enhance your construction projects. From product spotlights to project management strategies, our blog is your go-to resource for all things hardware and construction.',
-    insightsHeading: 'Insights',
+      'Creamy lattes, refreshing iced drinks, and our favorite slush: simple ways to enjoy Earnest Gumiho ginseng powder every day.',
+    insightsHeading: 'Learn About Korean Ginseng',
     insightsSubTitle:
-      "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts. ",
-    noPosts: 'No blog posts yet. Check back soon.',
-    noInsights: 'No insights yet. Check back soon.',
+      'Discover the history, benefits, and craftsmanship behind Korean ginseng from Geumsan.',
+    noPosts: 'No recipes yet. Check back soon.',
+    noInsights: 'No articles yet. Check back soon.',
   },
 
   productsIndex: {
     title: 'Products',
     metaDescription:
-      'Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts.',
-    ogTitle: 'Hardware Tools | ScrewFast',
+      'Shop Earnest Gumiho Korean ginseng powders: our classic 4-year-old Geumsan ginseng with yam, and Lululala Ginseng Powder with fish collagen peptides and hyaluronic acid.',
+    ogTitle: 'Korean Ginseng Powder | Earnest Gumiho',
     heading: 'Products',
     subTitle:
-      'Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.',
+      'Genuine Korean ginseng crafted for your daily routine: our classic ginseng powder, and Lululala Ginseng Powder with fish collagen peptides and hyaluronic acid.',
     customerStories: 'Customer Stories',
     testimonials: {
       title: 'What Our Customers Say',
-      quotes: [
-        {
-          content:
-            ' "Since switching to ScrewFast\'s hardware tools, the efficiency on our construction sites has skyrocketed. The durability of the hex bolts and precision of the machine screws are simply unmatched. It\'s refreshing to work with a company that truly understands the daily demands of the industry." ',
-          author: 'Jason Clark',
-          role: 'Site Foreman | TopBuild',
-          avatarAlt: 'Image Description',
-        },
-        {
-          content:
-            ' "As an interior designer, I\'m always looking for high-quality materials and tools that help bring my visions to life. ScrewFast\'s mixed screws assortment has been a game-changer for my projects, providing the perfect blend of quality and variety. The outstanding customer support was just the cherry on top!" ',
-          author: 'Maria Gonzalez',
-          role: 'Interior Designer | Creative Spaces',
-          avatarAlt: 'Image Description',
-        },
-        {
-          content:
-            " \"I've been a professional carpenter for over 15 years, and I can sincerely say that ScrewFast's tap bolts and nuts are some of the best I've used. They grip like no other, and I have full confidence in every joint and fixture. Plus, the service is impeccable – they truly care about my project's success.\" ",
-          author: 'Richard Kim',
-          role: 'Master Carpenter | WoodWright',
-          avatarAlt: 'Image Description',
-        },
-      ],
     },
     stats: {
-      title: 'Why Choose ScrewFast?',
+      title: 'Why Choose Earnest Gumiho?',
       subTitle:
-        "Transform your ideas into tangible results with ScrewFast tools. Whether you're starting with a sketch on a napkin or diving into a comprehensive construction project, our tools are engineered to help you build with confidence.",
+        'Bring the best of Korean tradition to your table with ginseng powder where great taste meets natural wellness.',
       benefits: [
-        'Robust and reliable tools for long-lasting performance.',
-        'Innovative solutions tailored to modern construction needs.',
-        "Customer support dedicated to your project's success.",
+        'Genuine 4-year-old Korean ginseng, harvested at peak maturity.',
+        'Sourced and manufactured in Geumsan, the capital of Korean ginseng.',
+        'No added chemicals, sugar, or artificial ingredients.',
       ],
     },
   },
 
   /** Locale-specific JSON data (already the good pattern; kept as-is). */
-  data: { faqs, features, pricing },
+  data: { faqs, features },
 };

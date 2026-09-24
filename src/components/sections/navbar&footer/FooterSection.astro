@@ -1,10 +1,8 @@
 ---
 import FooterSocialLink from '@components/ui/links/FooterSocialLink.astro';
-import EmailFooterInput from '@components/ui/forms/input/EmailFooterInput.astro';
-import DemoForm from '@components/ui/forms/DemoForm.astro';
 import Icon from '@components/ui/icons/Icon.astro';
 import BrandLogo from '@components/BrandLogo.astro';
-import { SITE } from '@data/constants';
+import { CONTACT, SITE } from '@data/constants';
 import { footerSections, socialLinks } from '@data/navigation';
 import { localePath } from '@utils/locale';
 
@@ -13,16 +11,22 @@ const footer = t.nav.footer;
 
 const socialIconClass =
   'h-4 w-4 shrink-0 text-neutral-700 dark:text-neutral-400';
+const contactLinkClass =
+  'inline-flex items-center gap-x-2 rounded-lg text-neutral-600 ring-zinc-500 outline-hidden transition duration-300 hover:text-pink-500 focus-visible:ring-3 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-pink-300 dark:focus:outline-hidden';
+const contactIconClass = 'h-4 w-4 shrink-0';
 ---
 
-<footer class="w-full bg-neutral-300 dark:bg-neutral-900">
+<footer class="w-full bg-neutral-100 dark:bg-neutral-900">
   <div class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-16 lg:pt-20 2xl:max-w-(--breakpoint-2xl)">
     <div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5">
       <div class="col-span-full lg:col-span-1">
         {/* Brand Logo */}
-        <BrandLogo class="h-auto w-32" />
+        <BrandLogo />
+        <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
+          {footer.tagline}
+        </p>
       </div>
-      {/* Link sections from the copy table (Ecosystem, Company, …) */}
+      {/* Link sections from the copy table (Shop, Company, …) */}
       {footerSections.map(section => (
         <div class="col-span-1">
           <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
@@ -37,11 +41,6 @@ const socialIconClass =
                 >
                   {footer.links[link.id]}
                 </a>
-                {link.badge === 'hiring' ? (
-                  <span class="ms-1 inline rounded-lg bg-orange-500 px-2 py-1 text-xs font-bold text-neutral-50">
-                    {footer.hiringBadge}
-                  </span>
-                ) : null}
               </li>
             ))}
           </ul>
@@ -50,15 +49,31 @@ const socialIconClass =
 
       <div class="col-span-2">
         <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
-          {footer.stayUpToDate}
+          {footer.getInTouch}
         </h3>
-
-        <DemoForm successMessage={footer.newsletterDemoMessage}>
-          <EmailFooterInput />
-          <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
-            {footer.stayUpToDateContent}
-          </p>
-        </DemoForm>
+        <ul class="mt-3 grid space-y-3 text-sm">
+          <li>
+            <a class={contactLinkClass} href={`mailto:${CONTACT.email}`}>
+              <Icon name="envelopeOpen" class={contactIconClass} />
+              {CONTACT.email}
+            </a>
+          </li>
+          <li class="inline-flex items-center gap-x-2 text-neutral-600 dark:text-neutral-400">
+            <Icon name="chatBubble" class={contactIconClass} />
+            {footer.kakaoTalk}: {CONTACT.kakaoTalkId}
+          </li>
+          <li>
+            <a
+              class={contactLinkClass}
+              href={CONTACT.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="instagram" class={contactIconClass} />
+              {`@${CONTACT.instagramHandle}`}
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -67,40 +82,14 @@ const socialIconClass =
         <p class="text-sm text-neutral-600 dark:text-neutral-400">
           © <span id="current-year"></span>
           {` `}
-          {SITE.title}. {footer.craftedBy}
-          {` `}
-          <a
-            class="rounded-lg font-medium underline underline-offset-2 ring-zinc-500 outline-hidden transition duration-300 hover:text-neutral-700 hover:decoration-dashed focus:outline-hidden focus-visible:ring-3 dark:ring-zinc-200 dark:hover:text-neutral-300"
-            href="https://www.gulamoff.dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            gulamoff
-          </a>
-          .
+          {SITE.company}. {footer.rightsReserved}
         </p>
       </div>
 
       {/* Social Brands */}
       <div>
-        <FooterSocialLink url={socialLinks.facebook} label="Facebook">
-          <Icon name="facebook" class={socialIconClass} title="Facebook" />
-        </FooterSocialLink>
-
-        <FooterSocialLink url={socialLinks.x} label="X">
-          <Icon name="x" class={socialIconClass} title="X" />
-        </FooterSocialLink>
-
-        <FooterSocialLink url={socialLinks.github} label="GitHub">
-          <Icon name="githubMark" class={socialIconClass} title="GitHub" />
-        </FooterSocialLink>
-
-        <FooterSocialLink url={socialLinks.google} label="Google">
-          <Icon name="google" class={socialIconClass} title="Google" />
-        </FooterSocialLink>
-
-        <FooterSocialLink url={socialLinks.slack} label="Slack">
-          <Icon name="slack" class={socialIconClass} title="Slack" />
+        <FooterSocialLink url={socialLinks.instagram} label="Instagram">
+          <Icon name="instagram" class={socialIconClass} title="Instagram" />
         </FooterSocialLink>
       </div>
     </div>

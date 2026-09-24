@@ -90,7 +90,7 @@ export function buildPageMetadata(input: PageMetadataInput): PageMetadata {
 
   const publisher = {
     '@type': 'Organization',
-    name: SITE.title,
+    name: SITE.company,
     logo: { '@type': 'ImageObject', url: `${SITE.url}/favicon.ico` },
   };
 
