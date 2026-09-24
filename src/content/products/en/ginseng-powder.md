@@ -5,9 +5,10 @@ main:
   id: 1
   content: |
     The rich and deep flavor of matured Korean ginseng will wrap your body and mind in warmth.
-  imgCard: '@/images/gumiho/ginseng powder package.png'
+  imgCard: '@/images/gumiho/Ginseng_Latte.png'
   imgMain: '@/images/gumiho/ginseng powder package.png'
-  imgAlt: 'Earnest Gumiho Ginseng Powder pouch beside a pile of ginseng powder'
+  imgAlt: 'Ginseng Latte poster: a hot ginseng latte and an iced ginseng latte beside a fresh ginseng root'
+  imgMainAlt: 'Earnest Gumiho Ginseng Powder pouch beside a pile of ginseng powder'
 tabs:
   - id: 'tabs-with-card-item-1'
     dataTab: '#tabs-with-card-1'
@@ -22,8 +23,9 @@ longDescription:
   title: 'Great Taste Meets Natural Wellness'
   subTitle: |
     Made in Geumsan, Korea, famous for its top-quality ginseng, our ginseng powder is crafted from genuine, matured Korean ginseng and thoughtfully blended with yam. It's perfect for creamy lattes and refreshing shakes, giving you a smooth, delicious flavor with natural nutrients.
-  btnTitle: 'Buy on Amazon'
-  btnURL: 'https://www.amazon.com/dp/B0F6W4KTVG'
+  # Sold out: no btnURL, so the button doesn't link anywhere.
+  # Amazon listing (for when it's restocked): https://www.amazon.com/dp/B0F6W4KTVG
+  btnTitle: 'Sold Out'
 descriptionList:
   - title: 'Matured Ginseng'
     subTitle: 'Our ginseng is grown to maturity and is rich in ginsenosides, traditionally valued for energy, focus, and mental clarity.'

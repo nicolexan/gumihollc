@@ -19,6 +19,8 @@ const productsCollection = defineCollection({
         imgCard: image(),
         imgMain: image(),
         imgAlt: z.string(),
+        /** Alt text for imgMain when it differs from the card image. */
+        imgMainAlt: z.string().optional(),
       }),
       tabs: z.array(
         z.object({
@@ -31,7 +33,8 @@ const productsCollection = defineCollection({
         title: z.string(),
         subTitle: z.string(),
         btnTitle: z.string(),
-        btnURL: z.string(),
+        /** Omit to show the button without a link (e.g. "Sold Out"). */
+        btnURL: z.string().optional(),
       }),
       descriptionList: z.array(
         z.object({

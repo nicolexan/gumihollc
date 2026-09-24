@@ -30,7 +30,7 @@ export const footerSections: {
     id: 'shop',
     links: [
       { id: 'products', path: '/products' },
-      { id: 'amazon', path: SHOP.amazonUrl },
+      { id: 'amazon', path: SHOP.lululalaUrl },
       { id: 'recipes', path: '/blog' },
     ],
   },

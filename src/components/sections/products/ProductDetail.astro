@@ -40,7 +40,8 @@ const { copy: t } = Astro.locals;
         id="fadeInMoveRight"
         src={product.data.main.imgMain}
         class="w-[600px] will-change-transform"
-        alt={product.data.main.imgAlt}
+        alt={product.data.main.imgMainAlt ?? product.data.main.imgAlt}
+        width={1200}
         format={'avif'}
         loading={'eager'}
       />
@@ -79,10 +80,19 @@ const { copy: t } = Astro.locals;
               {product.data.longDescription.subTitle}
             </p>
             <p class="mt-5">
-              <PrimaryCTA
-                title={product.data.longDescription.btnTitle}
-                url={product.data.longDescription.btnURL}
-              />
+              {product.data.longDescription.btnURL ? (
+                <PrimaryCTA
+                  title={product.data.longDescription.btnTitle}
+                  url={product.data.longDescription.btnURL}
+                />
+              ) : (
+                <PrimaryCTA
+                  title={product.data.longDescription.btnTitle}
+                  type="button"
+                  aria-disabled="true"
+                  noArrow
+                />
+              )}
             </p>
           </div>
 

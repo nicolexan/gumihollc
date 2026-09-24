@@ -96,7 +96,7 @@ export const en = {
 
   home: {
     banner: {
-      title: 'Try our best-selling ginseng powder',
+      title: 'Our Most Recent Product',
       btn: 'See us on Amazon',
     },
     hero: {
@@ -150,6 +150,11 @@ export const en = {
             'Incorporating the powder into a daily routine has quickly become a morning staple. Dealing with frequent afternoon fatigue meant finding a clean energy source without the dreaded caffeine crash was a true relief. The individual packaging is exceptionally convenient. Tossing a 5g stick into a bag makes it effortless to take on the go, whether mixed into warm water or blended into a post-workout smoothie. The taste carries that characteristic earthy, slightly bitter ginseng profile, but the addition of yam softens the edge, making it surprisingly smooth and palatable. With daily use, a subtle yet steady lift in daily stamina and mental focus became apparent. Alertness during long work hours improved noticeably, and the convenience factor ensures no doses are missed. Anyone looking for a natural way to support vitality through a hassle-free supplement format will find this blend definitely worth adding to the pantry.',
           author: 'Mike',
           role: 'Verified Amazon Buyer',
+        },
+        {
+          content:
+            "I have a severe caffeine sensitivity, so trying ginseng for a gradual energy stimulant was exciting! The product tastes amazing, and I definitely find myself reaching for this ginseng powder when I'm in the mood for an icy, refreshing drink. By itself, the ginseng tastes way better than other ones I've tried in the past: not too bitter, just the right amount of earthy flavor. Adding honey gives it the right sweetness to make it a treat rather than just a health drink. I already ran out!",
+          author: 'Nicole',
         },
       ],
       statistics: [

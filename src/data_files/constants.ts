@@ -23,7 +23,13 @@ export const CONTACT = {
 
 /** Where to buy. Canonical /dp/ link: search-tracking params go stale. */
 export const SHOP = {
-  amazonUrl: 'https://www.amazon.com/dp/B0F6W4KTVG',
+  /**
+   * Lululala Ginseng Powder, the newest product; used by the home banner and
+   * the footer's "Buy on Amazon". The classic Ginseng Powder is sold out
+   * (its listing, https://www.amazon.com/dp/B0F6W4KTVG, is noted in its
+   * product file).
+   */
+  lululalaUrl: 'https://www.amazon.com/dp/B0HGQB1TKT',
 };
 
 // Per-locale titles, descriptions and Open Graph text live in `src/copy/`;

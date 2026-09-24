@@ -31,7 +31,7 @@ const EXPECTATIONS = {
   '/contact/': ['services@gumihollc.com', 'GumihoLLC'],
   '/faq/': ['hs-accordion'],
   '/blog/ginseng-slush/': ['"@type":"BlogPosting"'],
-  '/products/ginseng-powder/': ['amazon.com/dp/B0F6W4KTVG'],
+  '/products/ginseng-powder/': ['Sold Out', 'aria-disabled="true"'],
 };
 
 const MIME = {

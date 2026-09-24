@@ -5,9 +5,10 @@ main:
   id: 1
   content: |
     충분히 자란 고려인삼의 깊고 진한 풍미가 몸과 마음을 따뜻하게 감싸 줍니다.
-  imgCard: '@/images/gumiho/ginseng powder package.png'
+  imgCard: '@/images/gumiho/Ginseng_Latte.png'
   imgMain: '@/images/gumiho/ginseng powder package.png'
-  imgAlt: 'Earnest Gumiho 인삼 파우더 파우치와 인삼 가루'
+  imgAlt: '인삼 라떼 포스터: 따뜻한 인삼 라떼와 아이스 인삼 라떼, 그리고 수삼 한 뿌리'
+  imgMainAlt: 'Earnest Gumiho 인삼 파우더 파우치와 인삼 가루'
 tabs:
   - id: 'tabs-with-card-item-1'
     dataTab: '#tabs-with-card-1'
@@ -22,8 +23,8 @@ longDescription:
   title: '맛과 자연의 건강함이 만나다'
   subTitle: |
     최고 품질의 인삼으로 유명한 대한민국 금산에서 만든 인삼 파우더입니다. 충분히 자란 정품 고려인삼에 마를 정성껏 블렌딩했습니다. 부드러운 라떼와 시원한 쉐이크에 잘 어울려, 자연의 영양을 담은 부드럽고 맛있는 풍미를 선사합니다.
-  btnTitle: '아마존에서 구매'
-  btnURL: 'https://www.amazon.com/dp/B0F6W4KTVG'
+  # Sold out: no btnURL, so the button doesn't link anywhere.
+  btnTitle: '품절'
 descriptionList:
   - title: '충분히 자란 인삼'
     subTitle: '충분히 자란 인삼으로, 예로부터 활력과 집중력, 맑은 정신을 위해 귀하게 여겨 온 진세노사이드가 풍부합니다.'

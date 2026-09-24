@@ -40,14 +40,17 @@ type StatProps = {
       </div>
 
       {/* Generate a blockquote for each testimonial in the testimonials array by mapping over the array. */}
-      {testimonials &&
-        testimonials.map(testimonial => (
-          <TestimonialItem
-            content={testimonial.content}
-            author={testimonial.author}
-            role={testimonial.role}
-          />
-        ))}
+      {testimonials && (
+        <div class="space-y-14">
+          {testimonials.map(testimonial => (
+            <TestimonialItem
+              content={testimonial.content}
+              author={testimonial.author}
+              role={testimonial.role}
+            />
+          ))}
+        </div>
+      )}
     </div>
     {statistics && (
       <div class="mt-10 lg:col-span-6 lg:col-end-13 lg:mt-0">
