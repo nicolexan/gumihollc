@@ -7,7 +7,7 @@ export const SITE = {
   company: 'Gumiho LLC',
   tagline: 'Best Quality Ginseng from Geumsan, Korea',
   description:
-    'Earnest Gumiho brings premium 4-year-old Korean ginseng from Geumsan, Korea, to your table. Pure ginseng powder blended with yam for lattes and shakes, with no added sugar or chemicals.',
+    'Earnest Gumiho brings premium, matured Korean ginseng from Geumsan, Korea, to your table. Pure ginseng powder blended with yam for lattes and shakes, with no added sugar or chemicals.',
   description_short: 'Premium Korean Ginseng Powder from Geumsan, Korea.',
   url: 'https://gumihollc.com',
   author: 'Gumiho LLC',

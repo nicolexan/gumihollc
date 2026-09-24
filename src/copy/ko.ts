@@ -10,11 +10,11 @@ import type { PartialCopy } from './index';
 export const ko: PartialCopy = {
   site: {
     description:
-      'Earnest Gumiho는 대한민국 금산의 4년근 고려인삼을 여러분의 식탁으로 전합니다. 마와 블렌딩한 순수 인삼 파우더로 라떼와 쉐이크를 즐겨 보세요. 설탕과 화학 첨가물을 넣지 않았습니다.',
-    descriptionShort: '대한민국 금산에서 온 프리미엄 4년근 고려인삼 파우더.',
+      'Earnest Gumiho는 대한민국 금산의 충분히 자란 고려인삼을 여러분의 식탁으로 전합니다. 마와 블렌딩한 순수 인삼 파우더로 라떼와 쉐이크를 즐겨 보세요. 설탕과 화학 첨가물을 넣지 않았습니다.',
+    descriptionShort: '대한민국 금산에서 온 프리미엄 고려인삼 파우더.',
     ogTitle: 'Earnest Gumiho: 금산 고려인삼',
     ogDescription:
-      '자연의 비밀을 발견하세요. 활력과 집중, 건강을 위한 인삼. Earnest Gumiho 인삼 파우더는 대한민국 금산에서 재배한 정품 4년근 고려인삼으로 만듭니다.',
+      '자연의 비밀을 발견하세요. 활력과 집중, 건강을 위한 인삼. Earnest Gumiho 인삼 파우더는 대한민국 금산에서 재배한 충분히 자란 정품 고려인삼으로 만듭니다.',
   },
 
   layout: {
@@ -117,9 +117,9 @@ export const ko: PartialCopy = {
           alt: '인삼의 고장, 대한민국 금산',
         },
         harvest: {
-          heading: '4년근 수확',
+          heading: '충분히 자란 뒤 수확',
           content:
-            '가장 알맞게 자란 시기에 수확한 정품 4년근 고려인삼을 사용해 깊고 진한 맛과 풍부한 천연 진세노사이드를 담았습니다.',
+            '충분히 자란 뒤 수확한 정품 고려인삼을 사용해 깊고 진한 맛과 풍부한 천연 진세노사이드를 담았습니다.',
           alt: '금산 농가에서 갓 수확한 인삼',
         },
         purity: {
@@ -144,7 +144,7 @@ export const ko: PartialCopy = {
         },
       ],
       statistics: [
-        { count: '4년', description: '가장 알맞게 자란 뒤 수확' },
+        { count: '30', description: '룰루랄라 한 상자에 담긴 개별 스틱' },
         { count: '100%', description: '금산산 고려인삼' },
         { count: '0g', description: '설탕·화학 첨가물·인공 원료 무첨가' },
         { count: '10g', description: '이면 부드러운 12oz 라떼 한 잔 완성' },
@@ -243,7 +243,7 @@ export const ko: PartialCopy = {
   productsIndex: {
     title: '제품',
     metaDescription:
-      'Earnest Gumiho 고려인삼 파우더를 만나 보세요. 마와 블렌딩한 클래식 금산 4년근 인삼 파우더, 그리고 피쉬 콜라겐 펩타이드와 히알루론산을 담은 룰루랄라 인삼 파우더.',
+      'Earnest Gumiho 고려인삼 파우더를 만나 보세요. 마와 블렌딩한 클래식 금산 인삼 파우더, 그리고 피쉬 콜라겐 펩타이드와 히알루론산을 담은 룰루랄라 인삼 파우더.',
     ogTitle: '고려인삼 파우더 | Earnest Gumiho',
     heading: '제품',
     subTitle:
@@ -257,7 +257,7 @@ export const ko: PartialCopy = {
       subTitle:
         '맛과 자연의 건강함이 만나는 인삼 파우더로 한국의 전통을 식탁에서 만나 보세요.',
       benefits: [
-        '가장 알맞게 자란 시기에 수확한 정품 4년근 고려인삼.',
+        '충분히 자란 정품 고려인삼.',
         '고려인삼의 수도, 금산에서 원료를 공급받고 제조.',
         '화학 첨가물, 설탕, 인공 원료 무첨가.',
       ],

@@ -9,7 +9,7 @@ Our ginseng products are sourced and manufactured in Geumsan, where centuries-ol
 
 ## Sourced from Geumsan
 
-Geumsan is famous across Korea for its top-quality ginseng. We work with the region's most fertile and trusted farms, using genuine 4-year-old Korean ginseng harvested at peak maturity.
+Geumsan is famous across Korea for its top-quality ginseng. We work with the region's most fertile and trusted farms, using genuine, matured Korean ginseng.
 
 ## As Pure as Possible
 

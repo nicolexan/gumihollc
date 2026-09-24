@@ -1,10 +1,10 @@
 ---
 title: '인삼 파우더'
-description: '금산 4년근 고려인삼'
+description: '금산의 충분히 자란 고려인삼'
 main:
   id: 1
   content: |
-    4년근 고려인삼의 깊고 진한 풍미가 몸과 마음을 따뜻하게 감싸 줍니다.
+    충분히 자란 고려인삼의 깊고 진한 풍미가 몸과 마음을 따뜻하게 감싸 줍니다.
   imgCard: '@/images/gumiho/ginseng powder package.png'
   imgMain: '@/images/gumiho/ginseng powder package.png'
   imgAlt: 'Earnest Gumiho 인삼 파우더 파우치와 인삼 가루'
@@ -21,19 +21,19 @@ tabs:
 longDescription:
   title: '맛과 자연의 건강함이 만나다'
   subTitle: |
-    최고 품질의 인삼으로 유명한 대한민국 금산에서 만든 인삼 파우더입니다. 정품 4년근 고려인삼에 마를 정성껏 블렌딩했습니다. 부드러운 라떼와 시원한 쉐이크에 잘 어울려, 자연의 영양을 담은 부드럽고 맛있는 풍미를 선사합니다.
+    최고 품질의 인삼으로 유명한 대한민국 금산에서 만든 인삼 파우더입니다. 충분히 자란 정품 고려인삼에 마를 정성껏 블렌딩했습니다. 부드러운 라떼와 시원한 쉐이크에 잘 어울려, 자연의 영양을 담은 부드럽고 맛있는 풍미를 선사합니다.
   btnTitle: '아마존에서 구매'
   btnURL: 'https://www.amazon.com/dp/B0F6W4KTVG'
 descriptionList:
-  - title: '가장 알맞은 시기에 수확'
-    subTitle: '가장 알맞게 자란 시기에 수확한 4년근 인삼으로, 예로부터 활력과 집중력, 맑은 정신을 위해 귀하게 여겨 온 진세노사이드가 풍부합니다.'
+  - title: '충분히 자란 인삼'
+    subTitle: '충분히 자란 인삼으로, 예로부터 활력과 집중력, 맑은 정신을 위해 귀하게 여겨 온 진세노사이드가 풍부합니다.'
   - title: '균형을 위한 적응원'
     subTitle: '적응원(adaptogen)으로 알려진 고려인삼은 오랫동안 일상의 스트레스를 관리하고 균형을 유지하는 데 쓰여 왔습니다.'
   - title: '부드럽고 맛있게'
     subTitle: '마와 블렌딩해 부드러운 맛과 식감을 살려, 라떼와 쉐이크, 슬러시를 더욱 맛있게 즐길 수 있습니다.'
 specificationsLeft:
   - title: '원재료'
-    subTitle: '4년근 고려인삼(Panax ginseng), 마.'
+    subTitle: '충분히 자란 고려인삼(Panax ginseng), 마.'
   - title: '원산지'
     subTitle: '대한민국 금산에서 원료를 공급받아 제조하고, 미국으로 직접 수입합니다.'
   - title: '무첨가'
@@ -43,7 +43,7 @@ specificationsLeft:
 tableData:
   - feature: ['항목', '내용']
     description:
-      - ['인삼 연근', '4년근']
+      - ['인삼', '충분히 자란 인삼']
       - ['품종', 'Panax ginseng']
       - ['원산지', '대한민국 금산']
       - ['1회 제공량', '10g']

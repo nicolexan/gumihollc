@@ -13,13 +13,13 @@ export const en = {
   site: {
     /** Default `<meta name="description">` when a page sets none. */
     description:
-      'Earnest Gumiho brings premium 4-year-old Korean ginseng from Geumsan, Korea, to your table. Pure ginseng powder blended with yam for lattes and shakes, with no added sugar or chemicals.',
+      'Earnest Gumiho brings premium, matured Korean ginseng from Geumsan, Korea, to your table. Pure ginseng powder blended with yam for lattes and shakes, with no added sugar or chemicals.',
     /** schema.org `WebSite.description` in every page's `isPartOf`. */
     descriptionShort:
-      'Premium 4-year-old Korean ginseng powder from Geumsan, Korea.',
+      'Premium matured Korean ginseng powder from Geumsan, Korea.',
     ogTitle: 'Earnest Gumiho: Korean Ginseng from Geumsan',
     ogDescription:
-      "Discover nature's secret: ginseng for energy, focus, and wellness. Earnest Gumiho's ginseng powder is made from genuine 4-year-old Korean ginseng grown in Geumsan, Korea.",
+      "Discover nature's secret: ginseng for energy, focus, and wellness. Earnest Gumiho's ginseng powder is made from genuine, matured Korean ginseng grown in Geumsan, Korea.",
   },
 
   layout: {
@@ -126,9 +126,9 @@ export const en = {
           alt: 'Geumsan, Korea, the ginseng capital',
         },
         harvest: {
-          heading: 'Harvested at 4 Years',
+          heading: 'Harvested When Mature',
           content:
-            'We use genuine 4-year-old Korean ginseng, harvested at peak maturity for a rich, deep flavor and plenty of naturally occurring ginsenosides.',
+            'We use genuine Korean ginseng, harvested once it has matured for a rich, deep flavor and plenty of naturally occurring ginsenosides.',
           alt: 'Freshly harvested ginseng from Geumsan farmers',
         },
         purity: {
@@ -154,8 +154,8 @@ export const en = {
       ],
       statistics: [
         {
-          count: '4 yrs',
-          description: 'grown before harvest, at peak maturity',
+          count: '30',
+          description: 'single-serve sticks in every Lululala box',
         },
         { count: '100%', description: 'Korean ginseng sourced from Geumsan' },
         {
@@ -262,7 +262,7 @@ export const en = {
   productsIndex: {
     title: 'Products',
     metaDescription:
-      'Shop Earnest Gumiho Korean ginseng powders: our classic 4-year-old Geumsan ginseng with yam, and Lululala Ginseng Powder with fish collagen peptides and hyaluronic acid.',
+      'Shop Earnest Gumiho Korean ginseng powders: our classic matured Geumsan ginseng with yam, and Lululala Ginseng Powder with fish collagen peptides and hyaluronic acid.',
     ogTitle: 'Korean Ginseng Powder | Earnest Gumiho',
     heading: 'Products',
     subTitle:
@@ -276,7 +276,7 @@ export const en = {
       subTitle:
         'Bring the best of Korean tradition to your table with ginseng powder where great taste meets natural wellness.',
       benefits: [
-        'Genuine 4-year-old Korean ginseng, harvested at peak maturity.',
+        'Genuine, matured Korean ginseng.',
         'Sourced and manufactured in Geumsan, the capital of Korean ginseng.',
         'No added chemicals, sugar, or artificial ingredients.',
       ],

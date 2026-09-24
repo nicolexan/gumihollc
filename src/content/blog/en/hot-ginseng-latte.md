@@ -12,7 +12,7 @@ readTime: 2
 tags: ['recipe', 'latte', 'hot']
 ---
 
-The rich, deep flavor of 4-year-old Korean ginseng makes a comforting hot latte. This recipe makes one 12oz cup.
+The rich, deep flavor of matured Korean ginseng makes a comforting hot latte. This recipe makes one 12oz cup.
 
 ## Ingredients
 
