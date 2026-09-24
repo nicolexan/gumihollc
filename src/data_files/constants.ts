@@ -16,9 +16,6 @@ export const SITE = {
 /** Public contact details, shown on the contact page and in the footer. */
 export const CONTACT = {
   email: 'services@gumihollc.com',
-  kakaoTalkId: 'GumihoLLC',
-  instagramHandle: 'gumihoginseng',
-  instagramUrl: 'https://www.instagram.com/gumihoginseng/',
 };
 
 /** Where to buy. Canonical /dp/ link: search-tracking params go stale. */

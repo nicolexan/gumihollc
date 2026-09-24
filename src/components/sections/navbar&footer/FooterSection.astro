@@ -1,16 +1,13 @@
 ---
-import FooterSocialLink from '@components/ui/links/FooterSocialLink.astro';
 import Icon from '@components/ui/icons/Icon.astro';
 import BrandLogo from '@components/BrandLogo.astro';
 import { CONTACT, SITE } from '@data/constants';
-import { footerSections, socialLinks } from '@data/navigation';
+import { footerSections } from '@data/navigation';
 import { localePath } from '@utils/locale';
 
 const { locale, copy: t } = Astro.locals;
 const footer = t.nav.footer;
 
-const socialIconClass =
-  'h-4 w-4 shrink-0 text-neutral-700 dark:text-neutral-400';
 const contactLinkClass =
   'inline-flex items-center gap-x-2 rounded-lg text-neutral-600 ring-zinc-500 outline-hidden transition duration-300 hover:text-pink-500 focus-visible:ring-3 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-pink-300 dark:focus:outline-hidden';
 const contactIconClass = 'h-4 w-4 shrink-0';
@@ -58,21 +55,6 @@ const contactIconClass = 'h-4 w-4 shrink-0';
               {CONTACT.email}
             </a>
           </li>
-          <li class="inline-flex items-center gap-x-2 text-neutral-600 dark:text-neutral-400">
-            <Icon name="chatBubble" class={contactIconClass} />
-            {footer.kakaoTalk}: {CONTACT.kakaoTalkId}
-          </li>
-          <li>
-            <a
-              class={contactLinkClass}
-              href={CONTACT.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon name="instagram" class={contactIconClass} />
-              {`@${CONTACT.instagramHandle}`}
-            </a>
-          </li>
         </ul>
       </div>
     </div>
@@ -84,13 +66,6 @@ const contactIconClass = 'h-4 w-4 shrink-0';
           {` `}
           {SITE.company}. {footer.rightsReserved}
         </p>
-      </div>
-
-      {/* Social Brands */}
-      <div>
-        <FooterSocialLink url={socialLinks.instagram} label="Instagram">
-          <Icon name="instagram" class={socialIconClass} title="Instagram" />
-        </FooterSocialLink>
       </div>
     </div>
 

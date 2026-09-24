@@ -16,7 +16,7 @@ Cool, creamy, and naturally energizing, our iced ginseng latte is perfect for wa
 
 ## Ingredients
 
-- Gumiho's Ginseng Powder (10g)
+- Gumiho ginseng powder (10g)
 - Milk (250mL)
 - Syrup or honey (20g)
 - Ice (50g)

@@ -16,7 +16,7 @@ Our customers' favorite, and ours too. Vanilla ice cream makes this slush extra 
 
 ## Ingredients
 
-- Gumiho's Ginseng Powder (10g)
+- Gumiho ginseng powder (10g)
 - Milk (200mL)
 - Syrup or honey (20g)
 - Ice (50g)

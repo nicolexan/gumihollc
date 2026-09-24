@@ -1,10 +1,10 @@
 /**
- * Navigation structure shared by every locale: stable ids, unlocalised paths
- * and social URLs. The label for each id lives in the copy tables
+ * Navigation structure shared by every locale: stable ids and unlocalised
+ * paths. The label for each id lives in the copy tables
  * (`copy.nav.labels`, `copy.nav.footer.sections`), so translators never touch
  * a path and code never keys on a translated label.
  */
-import { CONTACT, SHOP } from './constants';
+import { SHOP } from './constants';
 
 export type NavLinkId =
   'home' | 'products' | 'about' | 'blog' | 'faq' | 'contact';
@@ -43,7 +43,3 @@ export const footerSections: {
     ],
   },
 ];
-
-export const socialLinks = {
-  instagram: CONTACT.instagramUrl,
-};

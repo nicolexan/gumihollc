@@ -58,7 +58,6 @@ export const en = {
       },
       tagline: 'Best Quality Ginseng from Geumsan, Korea',
       getInTouch: 'Get in touch',
-      kakaoTalk: 'KakaoTalk',
       rightsReserved: 'All rights reserved.',
     },
   },
@@ -113,7 +112,8 @@ export const en = {
       title: 'Benefits of Korean Ginseng',
       subTitle:
         'Korean ginseng (Panax ginseng), known as "Insam" in Korea, has been part of Korean culture and tradition for centuries. Its primary active components, ginsenosides, are believed to support general health and vitality.',
-      imageAlt: 'Green mountains of Korea seen from a traditional temple',
+      imageAlt:
+        'Forested mountains of Geumsan, Korea, seen from a traditional pavilion',
     },
     featuresNavs: {
       title:
@@ -149,7 +149,6 @@ export const en = {
           content:
             'Incorporating the powder into a daily routine has quickly become a morning staple. Dealing with frequent afternoon fatigue meant finding a clean energy source without the dreaded caffeine crash was a true relief. The individual packaging is exceptionally convenient. Tossing a 5g stick into a bag makes it effortless to take on the go, whether mixed into warm water or blended into a post-workout smoothie. The taste carries that characteristic earthy, slightly bitter ginseng profile, but the addition of yam softens the edge, making it surprisingly smooth and palatable. With daily use, a subtle yet steady lift in daily stamina and mental focus became apparent. Alertness during long work hours improved noticeably, and the convenience factor ensures no doses are missed. Anyone looking for a natural way to support vitality through a hassle-free supplement format will find this blend definitely worth adding to the pantry.',
           author: 'Mike',
-          role: 'Verified Amazon Buyer',
         },
         {
           content:
@@ -225,17 +224,13 @@ export const en = {
   contact: {
     title: 'Contact',
     metaDescription:
-      'Questions about our Korean ginseng powder, wholesale, or your order? Reach Gumiho LLC by email, KakaoTalk, or Instagram.',
+      'Questions about our Korean ginseng powder, wholesale, or your order? Email Gumiho LLC.',
     ogTitle: 'Contact Us | Earnest Gumiho',
     heading: 'Contact us',
     subTitle:
       "Questions about our ginseng, wholesale, or your order? We'd love to hear from you.",
     emailHeading: 'Email us',
     emailContent: 'Prefer the written word? Drop us a line.',
-    kakaoHeading: 'KakaoTalk',
-    kakaoContent: 'Message us on KakaoTalk.',
-    instagramHeading: 'Instagram',
-    instagramContent: 'Follow along for recipes and news.',
     faqHeading: 'FAQ',
     faqContent: 'Explore our FAQ for quick, clear answers to common questions.',
     faqLink: 'Visit FAQ',

@@ -16,7 +16,7 @@ The rich, deep flavor of matured Korean ginseng makes a comforting hot latte. Th
 
 ## Ingredients
 
-- Gumiho's Ginseng Powder (10g)
+- Gumiho ginseng powder (10g)
 - Hot water (50mL)
 - Cafe syrup or honey (20g)
 - Hot milk (250mL)

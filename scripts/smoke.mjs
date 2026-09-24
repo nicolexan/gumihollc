@@ -28,7 +28,7 @@ const ROUTES = [
 const EXPECTATIONS = {
   '/': ['<html lang="en"', 'hreflang="en" href="https://gumihollc.com"'],
   '/products/lululala-ginseng-powder/': ['amazon.com/dp/B0HGQB1TKT'],
-  '/contact/': ['services@gumihollc.com', 'GumihoLLC'],
+  '/contact/': ['services@gumihollc.com'],
   '/faq/': ['hs-accordion'],
   '/blog/ginseng-slush/': ['"@type":"BlogPosting"'],
   '/products/ginseng-powder/': ['Sold Out', 'aria-disabled="true"'],

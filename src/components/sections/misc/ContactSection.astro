@@ -6,7 +6,7 @@ import { localePath } from '@utils/locale';
 
 /**
  * Company contact details. No form: Gumiho LLC prefers customers reach out
- * directly by email, KakaoTalk or Instagram.
+ * directly by email.
  */
 const { locale, copy: t } = Astro.locals;
 const copy = t.contact;
@@ -34,25 +34,6 @@ const blockIconClass =
         linkURL={`mailto:${CONTACT.email}`}
       >
         <Icon name="envelopeOpen" class={blockIconClass} />
-      </ContactIconBlock>
-
-      <ContactIconBlock
-        heading={copy.kakaoHeading}
-        content={copy.kakaoContent}
-        isAddressVisible={true}
-        addressContent={`ID: ${CONTACT.kakaoTalkId}`}
-      >
-        <Icon name="chatBubble" class={blockIconClass} />
-      </ContactIconBlock>
-
-      <ContactIconBlock
-        heading={copy.instagramHeading}
-        content={copy.instagramContent}
-        isLinkVisible={true}
-        linkTitle={`@${CONTACT.instagramHandle}`}
-        linkURL={CONTACT.instagramUrl}
-      >
-        <Icon name="instagram" class={blockIconClass} />
       </ContactIconBlock>
 
       <ContactIconBlock

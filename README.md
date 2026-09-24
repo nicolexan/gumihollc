@@ -15,7 +15,7 @@ Built with [Astro](https://astro.build/), [Tailwind CSS](https://tailwindcss.com
 | Our Story | `/about`    | Company mission, Geumsan, manufacturing                                                         |
 | Recipes   | `/blog`     | Latte, iced latte, and slush recipes, plus articles about Korean ginseng                        |
 | FAQ       | `/faq`      | Common questions                                                                                |
-| Contact   | `/contact`  | Email, KakaoTalk, and Instagram (no contact form)                                               |
+| Contact   | `/contact`  | Email (no contact form)                                                                         |
 
 ---
 
@@ -81,7 +81,7 @@ Site-wide SEO text (the default description and the social-sharing title) is in 
 [`src/data_files/constants.ts`](src/data_files/constants.ts):
 
 - `SITE`: brand name, legal company name, and domain
-- `CONTACT`: email, KakaoTalk ID, Instagram handle and URL (used by the contact page and footer)
+- `CONTACT`: the contact email (used by the contact page and footer)
 - `SHOP.amazonUrl`: the Amazon link used by the home-page banner and the footer's "Buy on Amazon"
 
 Each product's own Amazon button is set in its product file (`btnURL`, see below).
@@ -133,7 +133,7 @@ tags: ['recipe', 'latte', 'hot']
 
 ## Ingredients
 
-- Gumiho's Ginseng Powder (10g)
+- Gumiho ginseng powder (10g)
 - ...
 ```
 
@@ -146,7 +146,7 @@ Articles use `##` headings; they become the article's table of contents automati
 
 ### Customer reviews
 
-Reviews live in `home.testimonials.quotes` in [`src/copy/en.ts`](src/copy/en.ts). The same list appears on the home page and the products page. Each review has `content`, `author`, and an optional `role` (for example "Verified Amazon Buyer"). Reviews don't show photos.
+Reviews live in `home.testimonials.quotes` in [`src/copy/en.ts`](src/copy/en.ts). The same list appears on the home page and the products page. Each review has `content`, `author`, and an optional `role`, a short line shown under the name. Reviews don't show photos.
 
 ### Images
 

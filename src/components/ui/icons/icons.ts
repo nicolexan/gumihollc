@@ -645,21 +645,6 @@ export const Icons = {
     viewBox: '0 0 16 16',
     fill: 'currentColor',
   },
-  instagram: {
-    paths: [
-      {
-        d: 'M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z',
-      },
-      { d: 'M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z' },
-      { d: 'M17.5 6.5h.01' },
-    ],
-    viewBox: '0 0 24 24',
-    fill: 'none',
-    strokeWidth: '2',
-    strokeLinecap: 'round',
-    strokeLinejoin: 'round',
-    stroke: 'currentColor',
-  },
 } satisfies Record<string, IconDefinition>;
 
 export type IconName = keyof typeof Icons;

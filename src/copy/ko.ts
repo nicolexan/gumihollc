@@ -51,7 +51,6 @@ export const ko: PartialCopy = {
       },
       tagline: '대한민국 금산에서 온 최고 품질의 인삼',
       getInTouch: '연락처',
-      kakaoTalk: '카카오톡',
       rightsReserved: 'All rights reserved.',
     },
   },
@@ -104,7 +103,7 @@ export const ko: PartialCopy = {
       title: '고려인삼의 효능',
       subTitle:
         '고려인삼(Panax ginseng)은 수백 년 동안 한국의 문화와 전통 속에 함께해 온 귀한 뿌리입니다. 주요 활성 성분인 진세노사이드는 전반적인 건강과 활력을 돕는 것으로 알려져 있습니다.',
-      imageAlt: '전통 사찰에서 내려다본 한국의 푸른 산',
+      imageAlt: '전통 정자에서 바라본 금산의 푸른 산',
     },
     featuresNavs: {
       title:
@@ -140,7 +139,6 @@ export const ko: PartialCopy = {
           content:
             '이 파우더를 매일 먹기 시작한 뒤로 금세 아침 필수품이 되었습니다. 오후만 되면 자주 피곤했던 저에게 카페인 크래시 없는 깔끔한 에너지원을 찾은 건 정말 반가운 일이었어요. 개별 포장이 특히 편리합니다. 5g 스틱 하나를 가방에 넣어 두면 따뜻한 물에 타거나 운동 후 스무디에 섞어 어디서든 간편하게 먹을 수 있어요. 인삼 특유의 흙내음과 살짝 쌉쌀한 맛이 있지만, 마가 들어가 맛이 부드러워져 생각보다 훨씬 순하고 먹기 좋습니다. 꾸준히 먹다 보니 체력과 집중력이 은근하지만 꾸준히 좋아지는 게 느껴졌어요. 긴 업무 시간 동안에도 확실히 덜 지치고, 워낙 간편해서 빠뜨리는 날이 없습니다. 번거롭지 않은 방법으로 자연스럽게 활력을 챙기고 싶은 분께 꼭 추천하고 싶은 제품입니다.',
           author: 'Mike',
-          role: '아마존 구매 인증 고객',
         },
         {
           content:
@@ -207,17 +205,13 @@ export const ko: PartialCopy = {
   contact: {
     title: '문의하기',
     metaDescription:
-      '고려인삼 파우더, 도매, 주문에 대해 궁금한 점이 있으신가요? 이메일, 카카오톡, 인스타그램으로 Gumiho LLC에 문의해 주세요.',
+      '고려인삼 파우더, 도매, 주문에 대해 궁금한 점이 있으신가요? 이메일로 Gumiho LLC에 문의해 주세요.',
     ogTitle: '문의하기 | Earnest Gumiho',
     heading: '문의하기',
     subTitle:
       '인삼, 도매, 주문에 대해 궁금한 점이 있으신가요? 언제든지 연락 주세요.',
     emailHeading: '이메일',
     emailContent: '글로 문의하시는 게 편하신가요? 이메일을 보내 주세요.',
-    kakaoHeading: '카카오톡',
-    kakaoContent: '카카오톡으로 메시지를 보내 주세요.',
-    instagramHeading: '인스타그램',
-    instagramContent: '레시피와 새로운 소식을 확인해 보세요.',
     faqHeading: '자주 묻는 질문',
     faqContent: '자주 묻는 질문에서 빠르고 명확한 답변을 확인해 보세요.',
     faqLink: '자주 묻는 질문 보기',
