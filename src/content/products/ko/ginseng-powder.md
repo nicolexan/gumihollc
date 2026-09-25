@@ -16,9 +16,6 @@ tabs:
   - id: 'tabs-with-card-item-2'
     dataTab: '#tabs-with-card-2'
     title: '상세 정보'
-  - id: 'tabs-with-card-item-3'
-    dataTab: '#tabs-with-card-3'
-    title: '금산에서'
 longDescription:
   title: '맛과 자연의 건강함이 만나다'
   subTitle: |
@@ -51,9 +48,5 @@ tableData:
       - ['첨가당', '없음']
       # TODO: confirm net weight with Gumiho LLC
       - ['내용량', '포장 참조']
-blueprints:
-  first: '@/images/gumiho/ginseng from farmers.webp'
-  firstAlt: '금산 농가에서 갓 수확한 인삼'
-  second: '@/images/gumiho/geumsan korea ginseng capital.jpg'
-  secondAlt: '고려인삼의 수도, 대한민국 금산'
+blueprints: {}
 ---

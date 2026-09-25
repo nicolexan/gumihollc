@@ -3,6 +3,7 @@ import TestimonialItem from './TestimonialItem.astro';
 import StatsGrid from '../../ui/blocks/StatsGrid.astro';
 
 const { title, subTitle, testimonials, statistics } = Astro.props;
+const { copy: t } = Astro.locals;
 
 interface Props {
   title: string;
@@ -39,16 +40,80 @@ type StatProps = {
         )}
       </div>
 
-      {/* Generate a blockquote for each testimonial in the testimonials array by mapping over the array. */}
+      {/* Horizontal carousel: one testimonial at a time, swipe or use the arrows/dots. */}
       {testimonials && (
-        <div class="space-y-14">
-          {testimonials.map(testimonial => (
-            <TestimonialItem
-              content={testimonial.content}
-              author={testimonial.author}
-              role={testimonial.role}
-            />
-          ))}
+        <div class="testimonial-carousel" data-carousel>
+          <div
+            class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            data-carousel-track
+          >
+            {testimonials.map(testimonial => (
+              <div class="w-full shrink-0 snap-start px-8 pt-8">
+                <TestimonialItem
+                  content={testimonial.content}
+                  author={testimonial.author}
+                  role={testimonial.role}
+                />
+              </div>
+            ))}
+          </div>
+
+          {testimonials.length > 1 && (
+            <div class="mt-8 flex items-center gap-x-4 px-8">
+              <button
+                type="button"
+                class="inline-flex size-10 items-center justify-center rounded-full border border-neutral-300 text-neutral-700 transition hover:border-pink-400 hover:text-pink-500 focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:outline-none disabled:opacity-40 dark:border-neutral-600 dark:text-neutral-300 dark:hover:text-pink-300"
+                aria-label={t.layout.previousReview}
+                data-carousel-prev
+              >
+                <svg
+                  class="size-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M15 18l-6-6 6-6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <div class="flex gap-x-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    type="button"
+                    class="size-2.5 rounded-full bg-neutral-300 transition data-[active]:bg-pink-500 dark:bg-neutral-600 dark:data-[active]:bg-pink-300"
+                    aria-label={`${t.layout.showReview} ${index + 1}`}
+                    data-carousel-dot={index}
+                  />
+                ))}
+              </div>
+              <button
+                type="button"
+                class="inline-flex size-10 items-center justify-center rounded-full border border-neutral-300 text-neutral-700 transition hover:border-pink-400 hover:text-pink-500 focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:outline-none disabled:opacity-40 dark:border-neutral-600 dark:text-neutral-300 dark:hover:text-pink-300"
+                aria-label={t.layout.nextReview}
+                data-carousel-next
+              >
+                <svg
+                  class="size-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M9 6l6 6-6 6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -70,3 +135,50 @@ type StatProps = {
     )}
   </div>
 </section>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>('[data-carousel]')
+    .forEach(carousel => {
+      const track = carousel.querySelector<HTMLElement>(
+        '[data-carousel-track]'
+      );
+      if (!track) return;
+
+      const slides = Array.from(track.children) as HTMLElement[];
+      const prev = carousel.querySelector<HTMLButtonElement>(
+        '[data-carousel-prev]'
+      );
+      const next = carousel.querySelector<HTMLButtonElement>(
+        '[data-carousel-next]'
+      );
+      const dots = Array.from(
+        carousel.querySelectorAll<HTMLButtonElement>('[data-carousel-dot]')
+      );
+
+      const currentIndex = () =>
+        Math.round(track.scrollLeft / Math.max(track.clientWidth, 1));
+
+      const goTo = (index: number) => {
+        const target = Math.max(0, Math.min(index, slides.length - 1));
+        track.scrollTo({ left: target * track.clientWidth });
+      };
+
+      const update = () => {
+        const index = currentIndex();
+        dots.forEach((dot, i) => {
+          dot.toggleAttribute('data-active', i === index);
+          dot.setAttribute('aria-current', String(i === index));
+        });
+        if (prev) prev.disabled = index === 0;
+        if (next) next.disabled = index === slides.length - 1;
+      };
+
+      prev?.addEventListener('click', () => goTo(currentIndex() - 1));
+      next?.addEventListener('click', () => goTo(currentIndex() + 1));
+      dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    });
+</script>

@@ -190,31 +190,37 @@ const { copy: t } = Astro.locals;
       </div>
     </div>
 
-    <div id="tabs-with-card-3" class="product-tab-panel hidden" role="tabpanel">
-      <div class="mx-auto mb-20 flex w-full md:mb-28 2xl:w-4/5">
-        <div class="relative top-12 left-12 z-10 overflow-hidden rounded-xl shadow-lg md:top-16 md:left-12 md:-ml-12 lg:ml-0">
-          {product.data.blueprints.first && (
-            <Image
-              src={product.data.blueprints.first}
-              class="h-full w-full object-cover object-center"
-              alt={product.data.blueprints.firstAlt ?? ''}
-              format={'avif'}
-            />
-          )}
-        </div>
+    {(product.data.blueprints.first || product.data.blueprints.second) && (
+      <div
+        id="tabs-with-card-3"
+        class="product-tab-panel hidden"
+        role="tabpanel"
+      >
+        <div class="mx-auto mb-20 flex w-full md:mb-28 2xl:w-4/5">
+          <div class="relative top-12 left-12 z-10 overflow-hidden rounded-xl shadow-lg md:top-16 md:left-12 md:-ml-12 lg:ml-0">
+            {product.data.blueprints.first && (
+              <Image
+                src={product.data.blueprints.first}
+                class="h-full w-full object-cover object-center"
+                alt={product.data.blueprints.firstAlt ?? ''}
+                format={'avif'}
+              />
+            )}
+          </div>
 
-        <div class="relative right-12 overflow-hidden rounded-xl shadow-xl">
-          {product.data.blueprints.second && (
-            <Image
-              src={product.data.blueprints.second}
-              class="h-full w-full object-cover object-center"
-              alt={product.data.blueprints.secondAlt ?? ''}
-              format={'avif'}
-            />
-          )}
+          <div class="relative right-12 overflow-hidden rounded-xl shadow-xl">
+            {product.data.blueprints.second && (
+              <Image
+                src={product.data.blueprints.second}
+                class="h-full w-full object-cover object-center"
+                alt={product.data.blueprints.secondAlt ?? ''}
+                format={'avif'}
+              />
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    )}
   </div>
 </div>
 

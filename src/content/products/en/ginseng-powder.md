@@ -16,9 +16,6 @@ tabs:
   - id: 'tabs-with-card-item-2'
     dataTab: '#tabs-with-card-2'
     title: 'Details'
-  - id: 'tabs-with-card-item-3'
-    dataTab: '#tabs-with-card-3'
-    title: 'From Geumsan'
 longDescription:
   title: 'Great Taste Meets Natural Wellness'
   subTitle: |
@@ -52,9 +49,5 @@ tableData:
       - ['Added sugar', 'None']
       # TODO: confirm net weight with Gumiho LLC
       - ['Net weight', 'See package']
-blueprints:
-  first: '@/images/gumiho/ginseng from farmers.webp'
-  firstAlt: 'Freshly harvested ginseng from Geumsan farmers'
-  second: '@/images/gumiho/geumsan korea ginseng capital.jpg'
-  secondAlt: 'Geumsan, Korea, the capital of Korean ginseng'
+blueprints: {}
 ---

@@ -1,8 +1,8 @@
 ---
 title: '건강한 일상을 위한 고려인삼의 효능'
 description: '균형 잡힌 현대의 건강 루틴 속 고려인삼.'
-cardImage: '@/images/gumiho/geumsan korea mountains.jpg'
-cardImageAlt: '대한민국 금산 주변의 산'
+cardImage: '@/images/gumiho/ginseng from farmers.webp'
+cardImageAlt: '금산 농가에서 갓 수확한 인삼'
 ---
 
 고려인삼은 균형 잡힌 건강 관리의 일부로 현대인의 생활에도 잘 어울리는, 자연 그대로이면서 문화적으로 의미 깊은 재료입니다.

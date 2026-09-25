@@ -1,4 +1,6 @@
 ---
+import FullStar from '@components/ui/stars/FullStar.astro';
+
 // Define props from Astro
 const { title, testimonials } = Astro.props;
 
@@ -34,6 +36,16 @@ interface Props {
       <div class="flex h-auto">
         <div class="flex flex-col rounded-xl bg-neutral-50 dark:bg-neutral-700">
           <div class="flex-auto p-4 md:p-6">
+            {/* Five-star rating */}
+            <div
+              class="mb-3 flex gap-x-1"
+              role="img"
+              aria-label="5 out of 5 stars"
+            >
+              {Array.from({ length: 5 }).map(() => (
+                <FullStar />
+              ))}
+            </div>
             {/* Testimonial content */}
             <p class="text-base text-pretty text-neutral-600 italic md:text-lg dark:text-neutral-300">
               {testimonial.content}

@@ -29,6 +29,9 @@ export const en = {
     darkTheme: 'Dark Theme Toggle',
     lightTheme: 'Light Theme Toggle',
     toggleTheme: 'Toggle theme',
+    previousReview: 'Previous review',
+    nextReview: 'Next review',
+    showReview: 'Show review',
   },
 
   nav: {

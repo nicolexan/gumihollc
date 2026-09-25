@@ -1,4 +1,4 @@
-import ogImageSrc from '@images/gumiho/geumsan korea mountains.jpg';
+import ogImageSrc from '@images/gumiho/NEW banner.jpg';
 
 export const SITE = {
   /** Consumer-facing brand; used in page titles, OG and the navbar wordmark. */

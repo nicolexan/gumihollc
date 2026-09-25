@@ -1,8 +1,8 @@
 ---
 title: 'Benefits of Korean Ginseng for General Well-Being'
 description: 'How Korean ginseng fits into a balanced, modern wellness routine.'
-cardImage: '@/images/gumiho/geumsan korea mountains.jpg'
-cardImageAlt: 'Mountains around Geumsan, Korea'
+cardImage: '@/images/gumiho/ginseng from farmers.webp'
+cardImageAlt: 'Freshly harvested ginseng from Geumsan farmers'
 ---
 
 Korean ginseng is a natural and culturally significant product that fits into a modern lifestyle as part of a balanced approach to wellness.
